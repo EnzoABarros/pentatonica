@@ -1,4 +1,12 @@
-body {
-    display: flex;
-    flex-direction: column;
-}
+.roboto-mono-fontelegal {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .caixa {
+    background-color: #8f8f8f;
+    border-radius: 5px;
+    
+  }

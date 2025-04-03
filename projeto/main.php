@@ -3,38 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" type="text/css "href="src/style.css?<?php echo time(); ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <title>Pentatonica</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">
-        <img src="src/img/logo.png" alt="logo" style="width:120px;">
+        <img src="src/img/logo.png" alt="logo" style="width:120px;" href="main.php">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
+      <button class="btn btn-dark d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button>
+      <button class="btn btn-secondary d-flex" type="button" href="register.php">Cadastre-se</button>
       </form>
     </div>
   </div>
+  </nav>
 
   <!-- Carousel -->
 <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -49,13 +43,13 @@
 <!-- The slideshow/carousel -->
 <div class="carousel-inner">
   <div class="carousel-item active">
-    <img src="src/img/guitarras1.png" alt="Los Angeles" class="d-block w-100">
+    <img src="src/img/guitarras1.png.png" alt="Los Angeles" class="d-block w-100" style="width:50%;">
   </div>
   <div class="carousel-item">
-    <img src="src/img/guitarras2.png" alt="Chicago" class="d-block w-100">
+    <img src="src/img/guitarras1.png.png" alt="Chicago" class="d-block w-100" style="width:50%;">
   </div>
   <div class="carousel-item">
-    <img src="src/img/guitarras3.png" alt="New York" class="d-block w-100">
+    <img src="src/img/guitarras1.png.png" alt="New York" class="d-block w-100" style="width:50%;">
   </div>
 </div>
 
@@ -68,6 +62,20 @@
 </button>
 </div>
 
-</nav>
+<div class="container">
+  <h1 class="h1 roboto-mono-fontelegal mt-5" style="font-size:50px;">Bem-vindo(a) à Pentatonica!</h1>
+</div>
+
+<div class="container-md mt-5 p-4 caixa">
+  <h3 class="h3">De guitarrista, para guitarrista.</h3>
+  <p>
+  Vai comprar sua primeira guitarra? Deseja aumentar sua coleção? Ou quer uma guitarra única? Independente da sua necessidade, temos o que você precisa para ficar
+  satisfeito com a sua compra
+
+
+  </p>
+</div>
+
+
 </body>
 </html>
