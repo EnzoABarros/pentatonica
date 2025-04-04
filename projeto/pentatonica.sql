@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS tb_cliente (
 	cpf VARCHAR(20) NOT NULL,
 	gênero VARCHAR(30) NOT NULL,
 	data_nasc DATE NOT NULL
+	email VARCHAR(50) NOT NULL,
 );
 
 CREATE TABLE IF NOT EXISTS tb_lojista (
