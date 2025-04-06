@@ -58,3 +58,59 @@
 .botao:active {
   transform: scale(0.9);
 }
+
+.filtro {
+  position: fixed;
+  margin-top: 20px;
+  width: 25%;
+  height: 400px;
+  margin-left: 20px;
+  font-family: "Roboto Mono", monospace;
+}
+
+.filtro form {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  width: 25%;
+}
+
+.filtro h1 {
+  text-align: center;
+}
+
+.modelos {
+  max-height: 0px;
+  opacity: 0;
+}
+
+.filtro-conteudo {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.filtro-titulo:not(:last-child) {
+  border-bottom: 1px solid gray;
+}
+
+.filtro-conteudo.ativo {
+  max-height: 240px;
+  opacity: 1;
+  overflow: hidden;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.filtro-titulo {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+#preco {
+  width: 80%;
+}
