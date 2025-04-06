@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">
-        <img src="src/img/pentatonica.png" alt="logo" style="width:200px;" href="">
+        <img src="src/img/logo.png" alt="logo" style="width:70px;" href="javascript:void(0)">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
@@ -23,8 +23,8 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
       </ul>
-      <button class="btn btn-dark d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button>
-      <button class="btn btn-secondary d-flex" type="button" href="register.php">Cadastre-se</button>
+      <button class="botao d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button>
+      <button class="botao d-flex" type="button" href="register.php">Cadastre-se</button>
       </form>
     </div>
   </div>
@@ -43,10 +43,10 @@
 <!-- The slideshow/carousel -->
 <div class="carousel-inner">
   <div class="carousel-item active">
-    <img src="src/img/banner2.png" alt="Los Angeles" class="d-block w-100" style="width:50%;">
+    <img src="src/img/banner1.png" alt="Los Angeles" class="d-block w-100" style="width:50%;">
   </div>
   <div class="carousel-item">
-    <img src="src/img/banner1.png" alt="Chicago" class="d-block w-100" style="width:50%;">
+    <img src="src/img/banner2.png" alt="Chicago" class="d-block w-100" style="width:50%;">
   </div>
   <div class="carousel-item">
     <img src="src/img/banner3.png" alt="New York" class="d-block w-100" style="width:50%;">
