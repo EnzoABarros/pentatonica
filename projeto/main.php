@@ -66,28 +66,52 @@
   <h1 class="roboto-mono-fontelegal mt-5" style="font-size:50px;">Bem-vindo(a) à <kbd>pentatonica.<kbd></h1>
 </div>
 
-<div class="d-flex justify-content-between py-5 px-5">
-  <div class="d-flex flex-column mt-5 py-4 caixa border">
-    <h3 class="h3 mb-5 ms-3">De guitarrista, para guitarrista.</h3>
+<div class="d-flex flex-column mt-5 py-4 section1">
+  <h3 class="h3 mb-5 ms-3">De guitarrista, para guitarrista.</h3>
 
-    <p class="mx-3">
+  <p class="mx-3">
     Vai comprar sua primeira guitarra? Deseja aumentar sua coleção? Ou quer uma guitarra única? <br> Independente da sua necessidade, temos o que você precisa para ficar
     satisfeito com a sua compra. <br> Vasculhe por nosso vasto catálogo de instrumentos para achar o que procura.
 
 
-    </p>
+  </p>
   </div>
 
-  <div class="d-flex flex-column mt-5 py-4 caixa border">
-    <h3 class="h3 mb-5 ms-3">Precisa de ajuda para encontrar a guitarra <br> perfeita para você?</h3>
+<div class="d-flex flex-column mt-5 py-4 caixa border">
+    <h3 class="h3 mb-5 ms-3">Encontre a guitarra perfeita para você</h3>
 
     <p class="mx-3">
-    Vai comprar sua primeira guitarra? Deseja aumentar sua coleção? Ou quer uma guitarra única? <br> Independente da sua necessidade, temos o que você precisa para ficar
-    satisfeito com a sua compra. <br> Vasculhe por nosso vasto catálogo de instrumentos para achar o que procura.
-
-
+    Não sabe qual guitarra escolher? Temos um guia sobre os modelos diferentes de guitarra e um <br> quiz rápido para você encontrar o instrumento perfeito para você! <br>
     </p>
+    <button class="clique mt-3" href="#areaajuda">Clique aqui</button>
   </div>
+
+<div id="areaajuda">
+  <button>
+    
+  </button>
+  <button>
+
+  </button>
+  <button>
+
+  </button>
+  <button>
+
+  </button>
+  <button>
+
+  </button>
+  <button>
+
+  </button>
+  <button>
+
+  </button>
+  <button>
+
+  </button>
+
 </div>
 
 </body>
