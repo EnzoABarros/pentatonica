@@ -23,8 +23,8 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
       </ul>
-      <button class="botao d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button>
-      <button class="botao d-flex" type="button" href="register.php">Cadastre-se</button>
+      <a href="login.php"><button class="botao d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button></a>
+      <a href="register.php"><button class="botao d-flex" type="button" href="register.php">Cadastre-se</button></a>
       </form>
     </div>
   </div>
