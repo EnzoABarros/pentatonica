@@ -23,9 +23,9 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
       </ul>
-      <a href="login.php"><button class="botao d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button></a>
-      <a href="register.php"><button class="botao d-flex" type="button" href="register.php">Cadastre-se</button></a>
-      </form>
+      <a href="cadguit.php"><button class="botao d-flex" type="button" style="margin-right: 15px;">Guitarras</button></a>
+      <a href="cadlei.php"><button class="botao d-flex" type="button">Leilões</button></a>
+      <a href="cadlei.php"><button class="botao d-flex" type="button">Logout</button></a>
     </div>
   </div>
   </nav>
@@ -70,20 +70,20 @@
   <h3 class="h3 mb-5 ms-3">De guitarrista, para guitarrista.</h3>
 
   <p class="mx-3">
-    Vai comprar sua primeira guitarra? Deseja aumentar sua coleção? Ou quer uma guitarra única? Independente da sua necessidade, temos o que você precisa para ficar
-    satisfeito com a sua compra. Vasculhe por nosso vasto catálogo de instrumentos para achar o que procura.
+    Vai comprar sua primeira guitarra? Deseja aumentar sua coleção? Ou quer uma guitarra única? <br> Independente da sua necessidade, temos o que você precisa para ficar
+    satisfeito com a sua compra. <br> Vasculhe por nosso vasto catálogo de instrumentos para achar o que procura.
 
 
   </p>
   </div>
 
-<div class="d-flex flex-column section2">
-    <h3 class="h3 mb-5 ms-3 mt-5">Encontre a guitarra perfeita para você</h3>
+<div class="d-flex flex-column mt-5 py-4 caixa border">
+    <h3 class="h3 mb-5 ms-3">Encontre a guitarra perfeita para você</h3>
 
     <p class="mx-3">
-    Não sabe qual guitarra escolher? Temos um guia sobre os modelos diferentes de guitarra e um quiz rápido para você encontrar o instrumento perfeito para você! <br>
+    Não sabe qual guitarra escolher? Temos um guia sobre os modelos diferentes de guitarra e um <br> quiz rápido para você encontrar o instrumento perfeito para você! <br>
     </p>
-    <button class="clique mt-3 mb-5" href="#areaajuda">Clique aqui</button>
+    <button class="clique mt-3" href="#areaajuda">Clique aqui</button>
   </div>
 
 <div id="areaajuda">

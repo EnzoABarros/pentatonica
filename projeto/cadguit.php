@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">
+    <a class="navbar-brand" href="index.php">
         <img src="src/img/logo.png" alt="logo" style="width:70px;" href="javascript:void(0)">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -22,7 +22,6 @@
       </ul>
       <a href="cadguit.php"><button class="botao d-flex" type="button" style="margin-right: 15px;">Guitarras</button></a>
       <a href="cadlei.php"><button class="botao d-flex" type="button">Leilões</button></a>
-      </form>
     </div>
   </div>
   </nav>
