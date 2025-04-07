@@ -3,28 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css "href="src/style.css?<?php echo time(); ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Pentatonica</title>
 </head>
 <body>
-    <h1>Registro</h1>
-    <form action="registro.php" method="POST">
-        <label for="nomedeusuario">Nome de usuário:</label><br>
-        <input type="text" id="nomedeusuario" name="nomedeusuario" required><br><br>
-        
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="password">Senha:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
 
-        <label for="cpf">Digite seu CPF:</label><br>
-        <input type="cpf" id="cpf" name="cpf" required><br><br>
-        
-        <input type="submit" value="Registrar">
-    </form>
-
-    <p>Já tem uma conta? <a href="login.php">Faça login</a></p>
+<nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="index.php">
+        <img src="src/img/logo.png" alt="logo" style="width:70px;" href="index.php">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+      </ul>
+      <button class="botao d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button>
+      <button class="botao d-flex" type="button" href="register.php">Cadastre-se</button>
+      </form>
+    </div>
+  </div>
+  </nav>
+  
+<div class="form-container">
+	<p class="title">Registro</p>
+	<form class="form">
+		<div class="input-group">
+			<label for="username">Nome de usuário:</label>
+			<input type="text" name="username" id="username" placeholder="">
+		</div>
+        <div class="input-group">
+			<label for="email">E-mail:</label>
+			<input type="text" name="email" id="email" placeholder="">
+			</div>
+		<div class="input-group">
+			<label for="password">Senha:</label>
+			<input type="password" name="password" id="password" placeholder="">
+		</div>
+		<button class="sign">Registre-se</button>
+	</form>
+	<p class="signup">Já tem uma conta?
+		<a rel="noopener noreferrer" href="#" class="">Login</a>
+	</p>
+</div>
 
     <script>
         document.getElementById('cpf').addEventListener('input', function (e) {
