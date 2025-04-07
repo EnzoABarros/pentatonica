@@ -3,7 +3,7 @@
 		$db_name = "db_pentatonica";
 		$user    = "root";
 		$pass    = "1234";
-		$server  = "localhost:3307";
+		$server  = "localhost:3306";
 		$conexao = new mysqli($server, $user, $pass, $db_name);
 		return $conexao;
 	}
