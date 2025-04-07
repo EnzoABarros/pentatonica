@@ -8,6 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Pentatonica</title>
 </head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+    }
+</style>
 <body>
 <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
   <div class="container-fluid">
@@ -27,7 +33,7 @@
   </div>
   </nav>
 
-  <div class="form-container">
+  <div class="form-container card-registro">
 	<p class="title">Login</p>
 	<form class="form">
 		<div class="input-group">
