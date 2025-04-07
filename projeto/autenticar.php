@@ -10,7 +10,7 @@ $senha = $_POST['senha'] ?? '';
 
 // Verificação simples
 if (empty($usuario) || empty($senha)) {
-    echo "Preencha todos os campos.";
+    echo "<script>alert('Preencha todos os campos.'); history.go(-1)</script>";
     exit;
 }
 
