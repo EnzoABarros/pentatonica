@@ -87,34 +87,34 @@
   </div>
 
 <div id="areaajuda">
-  <a class="guias" href="">
+  <a class="guias" href="guia/stratocaster.php">
     <img src="src/img/stratocaster.png" alt="">
     </a>
-  <a class="guias" href="">
+  <a class="guias" href="guia/lespaul.php">
     <img src="src/img/lespaul.png" alt="">
   </a>
 
-  <a class="guias" href="">
+  <a class="guias" href="guia/telecaster.php">
     <img src="src/img/telecaster.png" alt="">
     </a>
 
-    <a class="guias" href="">
+    <a class="guias" href="guia/sg.php">
     <img src="src/img/sg.png" alt="">
     </a>
 
-    <a class="guias" href="">
+    <a class="guias" href="guia/superstrato.php">
     <img src="src/img/superstratocaster.png" alt="">
     </a>
 
-    <a class="guias" href="">
+    <a class="guias" href="guia/flyingv.php">
     <img src="src/img/flyingv.png" alt="">
     </a>
 
-    <a class="guias" href="">
+    <a class="guias" href="guia/semiacustica.php">
     <img src="src/img/semiacustica.png" alt="">  
     </a>
 
-    <a class="guias" href="">
+    <a class="guias" href="guia/quiz.php">
       <img src="src/img/quiz.png" alt="">
     </a>
 </div>
