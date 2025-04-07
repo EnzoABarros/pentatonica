@@ -36,24 +36,24 @@
   
 <div class="form-container card-registro">
 	<p class="title">Registro</p>
-	<form class="form">
+	<form class="form" action="registro_php.php" method="post">
 		<div class="input-group">
-			<label for="username">Nome de usuário:</label>
-			<input type="text" name="username" id="username" placeholder="">
+			<label for="nome">Nome de usuário:</label>
+			<input type="text" name="nome" id="nome" placeholder="">
 		</div>
         <div class="input-group">
 			<label for="email">E-mail:</label>
 			<input type="text" name="email" id="email" placeholder="">
 			</div>
         <div class="input-group">
-			<label for="email">CPF:</label>
+			<label for="cpf">CPF:</label>
 			<input type="text" name="cpf" id="cpf" placeholder="">
 			</div>
 		<div class="input-group">
-			<label for="password">Senha:</label>
-			<input type="password" name="password" id="password" placeholder="">
+			<label for="senha">Senha:</label>
+			<input type="senha" name="senha" id="senha" placeholder="">
 		</div>
-		<button class="sign">Registre-se</button>
+		<button class="sign" type="submit">Registre-se</button>
 	</form>
 	<p class="signup">Já tem uma conta?
 		<a rel="noopener noreferrer" href="login.php" class="">Login</a>

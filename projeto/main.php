@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <title>Pentatonica</title>
 </head>
-<body>
+<body data-bs-spy="scroll">
 <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">
@@ -87,31 +87,36 @@
   </div>
 
 <div id="areaajuda">
-  <button>
-    
-  </button>
-  <button>
+  <a class="guias" href="">
+    <img src="src/img/stratocaster.png" alt="">
+    </a>
+  <a class="guias" href="">
+    <img src="src/img/lespaul.png" alt="">
+  </a>
 
-  </button>
-  <button>
+  <a class="guias" href="">
+    <img src="src/img/telecaster.png" alt="">
+    </a>
 
-  </button>
-  <button>
+    <a class="guias" href="">
+    <img src="src/img/sg.png" alt="">
+    </a>
 
-  </button>
-  <button>
+    <a class="guias" href="">
+    <img src="src/img/superstratocaster.png" alt="">
+    </a>
 
-  </button>
-  <button>
+    <a class="guias" href="">
+    <img src="src/img/flyingv.png" alt="">
+    </a>
 
-  </button>
-  <button>
+    <a class="guias" href="">
+    <img src="src/img/semiacustica.png" alt="">  
+    </a>
 
-  </button>
-  <button>
-
-  </button>
-
+    <a class="guias" href="">
+      <img src="src/img/quiz.png" alt="">
+    </a>
 </div>
 
 </body>
