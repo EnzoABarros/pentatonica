@@ -12,23 +12,23 @@
         <title>Pentatonica</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="javascript:void(0)">
-                    <img src="src/img/pentatonica.png" alt="logo" style="width:200px;" href="">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="navbar-nav me-auto">
-                </ul>
-                <button class="btn btn-dark d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button>
-                <button class="btn btn-secondary d-flex" type="button" href="register.php">Cadastre-se</button>
-                </form>
-                </div>
-            </div>
-        </nav>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php">
+        <img src="src/img/logo.png" alt="logo" style="width:70px;" href="index.php">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+      </ul>
+      <button class="botao d-flex" type="button" style="margin-right: 15px;" href="login.php">Login</button>
+      <button class="botao d-flex" type="button" href="register.php">Cadastre-se</button>
+      </form>
+    </div>
+  </div>
+  </nav>
 
     <div class="catalogo" style="margin-top: 100px;">
     <div class="filtro">
