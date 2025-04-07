@@ -26,6 +26,12 @@
   .guias img{
     width: 15%;
   }
+  
+  .guia {
+    display: grid;
+    padding: 10px;
+    grid-template-rows: auto auto auto;
+  }
 
   .carousel-control-prev-icon,
 .carousel-control-next-icon {

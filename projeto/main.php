@@ -14,7 +14,7 @@
 <body data-bs-spy="scroll">
 <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">
+    <a class="navbar-brand" href="index.php">
         <img src="src/img/logo.png" alt="logo" style="width:70px;" href="javascript:void(0)">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -86,7 +86,7 @@
     <button class="clique mt-3 mb-5" href="#areaajuda">Clique aqui</button>
   </div>
 
-<div id="areaajuda">
+<div id="areaajuda" class="guia">
   <a class="guias" href="guia/stratocaster.php">
     <img src="src/img/stratocaster.png" alt="">
     </a>
