@@ -268,3 +268,13 @@ p {
 .clique:active {
   scale: 1;
 }
+
+.card-registro {
+  margin-top: 150px;
+  width: 400px;
+
+}
+
+.card-registro .signup {
+  margin-top: 15px;
+}
