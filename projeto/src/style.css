@@ -272,7 +272,7 @@ p {
 .card-registro {
   margin-top: 150px;
   width: 400px;
-
+  justify-self: center;
 }
 
 .card-registro .signup {
