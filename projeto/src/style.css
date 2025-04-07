@@ -16,11 +16,15 @@
   }
   
   .section1 {
-    background-color: grey;
+    background-color: rgb(223, 223, 223);
   }
 
   .section2 {
-    background-color: #6e6e6e;
+    background-color: #cecece;
+  }
+
+  .guias img{
+    width: 15%;
   }
 
   .carousel-control-prev-icon,
