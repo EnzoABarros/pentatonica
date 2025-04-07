@@ -278,3 +278,7 @@ p {
 .card-registro .signup {
   margin-top: 15px;
 }
+
+nav a {
+  text-decoration: none;
+}
