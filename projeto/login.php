@@ -35,14 +35,14 @@
 
   <div class="form-container card-registro">
 	<p class="title">Login</p>
-	<form class="form">
-		<div class="input-group">
+  <form class="form" method="POST" action="autenticar.php">
+  <div class="input-group">
 			<label for="usuario">Usuário</label>
 			<input type="text" name="usuario" id="usuario" placeholder="E-mail ou CPF">
 		</div>
 		<div class="input-group">
-			<label for="senha">Senha</label>
-			<input type="senha" name="senha" id="password" placeholder="">
+			<label for="password">Senha</label>
+			<input type="password" name="senha" id="password" placeholder="">
 			<div class="forgot">
 				<a rel="noopener noreferrer" href="#">Esqueceu sua senha?</a>
 			</div>
