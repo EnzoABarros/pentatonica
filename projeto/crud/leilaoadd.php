@@ -15,6 +15,7 @@
 
 <style>
     body {
+        display: flex;
         justify-content: center;
     }
 </style>
@@ -38,41 +39,42 @@
   </div>
   </nav>
 
-  <div class="row" style="margin-top: 7.8rem; text-align: center;">
+  <div class="row d-flex" style="margin-top: 7.8rem; text-align: center;">
 
         <h1 class="mb-5" style="font-size: 3.5rem;">Criar novo leilão</h1>
 
-			<div class="col" style="justify-self: center;">
+		<div class="col" style="display: flex; justify-content: center;">
 
-                <form class="form" method="POST" action="leilaoadd_php.php">
-                    <span class="input-span">
-                        <label for="guitarra" class="label">Guitarra</label>
-                        <input type="text" name="guitarra" id="guitarra"
-                    /></span>
-                    <span class="input-span">
-                        <label for="marca" class="label">Marca</label>
-                        <input type="text" name="marca" id="marca"
-                    /></span>
-                    <span class="input-span">
-                        <label for="descricao" class="label">Guitarra</label>
+            <form class="form" method="POST" action="leilaoadd_php.php">
+                <span class="input-span">
+                    <label for="guitarra" class="label">Guitarra</label>
+                    <input type="text" name="guitarra" id="guitarra"
+                /></span>
+                <span class="input-span">
+                    <label for="marca" class="label">Marca</label>
+                    <input type="text" name="marca" id="marca"
+                /></span>
+                    <span class="input=span">
+                        <label for="descricao" class="label">Descrição</label>
                         <textarea name="descricao" id="descricao" rows="5"></textarea>
                     </span>
                     <span class="input-span">
-                        <label for="lancemin" class="label">Lance mínimo</label>
-                        <input type="text" name="lancemin" id="lancemin"
-                    /></span>
-                    <span class="input-span">
-                        <label for="lancearreb" class="label">Lance de arrebatamento</label>
-                        <input type="text" name="lancearreb" id="lancearreb"
-                    /></span>
+                    <label for="lancemin" class="label">Lance mínimo</label>
+                    <input type="text" name="lancemin" id="lancemin"
+                /></span>
+                <span class="input-span">
+                    <label for="lancearreb" class="label">Lance de arrebatamento</label>
+                    <input type="text" name="lancearreb" id="lancearreb"
+                /></span>
 
-                    <label for="img">Envie a imagem da guitarra</label>
+                <label for="img">Choose a profile picture:</label>
 
-                    <input type="file" id="img" name="img" accept="image/png, image/jpeg" />
-
-                    <input class="submit mt-4 mb-5" type="submit" value="Criar"/>
-                    
-                    </form>
+                <input type="file" id="img" name="img" accept="image/png, image/jpeg" />
+                
+                <input class="submit mb-5 mt-4" type="submit" value="Criar" />
+                </form>
+			
+			</form>
 			</div>
 		</div>
 </body>

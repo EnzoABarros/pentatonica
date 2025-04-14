@@ -27,7 +27,8 @@ CREATE TABLE IF NOT EXISTS tb_leilao (
 	lance_maior DOUBLE NOT NULL,
 	lance_arrebatamento DOUBLE NOT NULL,
 	id_cliente INT NULL,
-	FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id)
+	FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id),
+	img VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS tb_anuncio(
