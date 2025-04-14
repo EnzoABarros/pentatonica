@@ -26,10 +26,9 @@ CREATE TABLE IF NOT EXISTS tb_leilao (
 	lance_minimo DOUBLE NOT NULL,
 	lance_maior DOUBLE NOT NULL,
 	lance_arrebatamento DOUBLE NOT NULL,
-	id_lojista INT NOT NULL,
-	id_cliente INT,
-	FOREIGN KEY (id_lojista) REFERENCES tb_lojista(id),
-	FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id)
+	id_cliente INT NULL,
+	FOREIGN KEY (id_cliente) REFERENCES tb_cliente(id),
+	img VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS tb_anuncio(
@@ -37,8 +36,8 @@ CREATE TABLE IF NOT EXISTS tb_anuncio(
 	nome_guitarra VARCHAR(100) NOT NULL,
 	marca_guitarra VARCHAR(30) NOT NULL,
 	descricao VARCHAR(1000) NOT NULL,
-	id_lojista INT NOT NULL,
-	FOREIGN KEY (id_lojista) REFERENCES tb_lojista(id)
+	preco DOUBLE NOT NULL,
+	imagem VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS tb_compra(
@@ -51,8 +50,4 @@ CREATE TABLE IF NOT EXISTS tb_compra(
 	FOREIGN KEY (id_leilao) REFERENCES tb_leilao(id),
 	FOREIGN KEY (id_anuncio) REFERENCES tb_anuncio(id)
 );
-
-
-ALTER TABLE tb_anuncio ADD imagem VARCHAR(255) NOT NULL;
-ALTER TABLE tb_leilao ADD imagem VARCHAR(255) NOT NULL;
 

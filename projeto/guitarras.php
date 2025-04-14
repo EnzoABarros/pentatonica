@@ -21,17 +21,17 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
       </ul>
-      <a href="cadguit.php"><button class="botao d-flex" type="button" style="margin-right: 15px;">Guitarras</button></a>
+      <a href="guitarras.php"><button class="botao d-flex" type="button" style="margin-right: 15px;">Guitarras</button></a>
       <a href="cadlei.php"><button class="botao d-flex" type="button">Leilões</button></a>
     </div>
   </div>
   </nav>
 
-    <h1 style="margin-top: 8rem; text-align: center; font-size: 3.5rem;">Leilões</h1>
+    <h1 style="margin-top: 8rem; text-align: center; font-size: 3.5rem;">Guitarras</h1>
 
   <div class="row" style="margin-top: 5rem;">
 		<div class="col">
-			 <a href="crud/leilaoadd.php" class="add">Criar leilão</a>
+			 <a href="cadguit.php" class="add">Criar anúncio</a>
 			 
 		<table class="table table-striped mt-5">
 			<thead>
@@ -42,9 +42,7 @@
 					<th>Guitarra</th>
 					<th>Marca</th>
 					<th>Descrição</th>
-					<th>Lance mínimo</th>
-					<th>Maior lance</th>
-					<th>Lance de arrebatamento</th>
+                    <th>Preço</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -52,7 +50,7 @@
 				include("conecta_db.php");
 
 				$obj = conecta_db();
-				$query = "SELECT * FROM tb_leilao";
+				$query = "SELECT * FROM tb_anuncio";
 				$resultado = $obj->query($query);
 				while($linha = $resultado->fetch_object()){
 						$html = "<tr>";
@@ -60,15 +58,12 @@
 						$html .= "<a class='btn btn-danger' href='index.php?page=2&id=".$linha->id."'> Excluir </a>";
 						$html .= "<a class='btn btn-success' href='index.php?page=3&id=".$linha->id."'> Alterar </a>";
 						$html .= "</td>";
-						$html .= "<td>".$linha->img."</td>";
+						$html .= "<td>".$linha->imagem."</td>";
 						$html .= "<td>".$linha->id."</td>";
 						$html .= "<td>".$linha->nome_guitarra."</td>";
 						$html .= "<td>".$linha->marca_guitarra."</td>";
 						$html .= "<td>".$linha->descricao."</td>";
-						$html .= "<td>".$linha->lance_minimo."</td>";
-						$html .= "<td>".$linha->lance_maior."</td>";
-						$html .= "<td>".$linha->lance_arrebatamento."</td>";
-
+						$html .= "<td>".$linha->preco."</td>";
 						$html .= "</tr>";
 						echo $html;
 				}

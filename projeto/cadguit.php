@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
       </ul>
-      <a href="cadguit.php"><button class="botao d-flex" type="button" style="margin-right: 15px;">Guitarras</button></a>
+      <a href="guitarras.php"><button class="botao d-flex" type="button" style="margin-right: 15px;">Guitarras</button></a>
       <a href="cadlei.php"><button class="botao d-flex" type="button">Leilões</button></a>
     </div>
   </div>
@@ -31,6 +31,7 @@
     <input type="text" name="nome" placeholder="Nome da Guitarra" class="form-control mb-2" required>
     <input type="text" name="marca" placeholder="Marca" class="form-control mb-2" required>
     <textarea name="descricao" placeholder="Descrição" class="form-control mb-2" required></textarea>
+    <input type="text" name="preco" placeholder="Preço" class="form-control mb-2" required>
 
     <label class="custum-file-upload" for="file">
         <div class="icon">
