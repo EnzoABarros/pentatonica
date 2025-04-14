@@ -27,33 +27,49 @@
   </div>
   </nav>
 
-    <h1>Cadastro de leilões</h1>
+    <h1 style="margin-top: 8rem; text-align: center; font-size: 3.5rem;">Cadastro de leilões</h1>
 
   <div class="row" style="margin-top: 5rem;">
 		<div class="col">
-			 <a href="" class="btn btn-primary">Adicionar novo registro</a>
+			 <a href="addlei.php" class="add">Criar leilão</a>
 			 
-		<table class="table table-striped">
+		<table class="table table-striped mt-5">
 			<thead>
 				<tr>
 					<th>#</th>
+					<th>Imagem</th>
 					<th>ID</th>
+					<th>Guitarra</th>
+					<th>Marca</th>
 					<th>Descrição</th>
+					<th>Lance mínimo</th>
+					<th>Maior lance</th>
+					<th>Lance de arrebatamento</th>
+          
 				</tr>
 			</thead>
 			<tbody>
 			<?php
+				include("conecta_db.php");
+
 				$obj = conecta_db();
 				$query = "SELECT * FROM tb_leilao";
 				$resultado = $obj->query($query);
 				while($linha = $resultado->fetch_object()){
 						$html = "<tr>";
 						$html .= "<td>";
-						$html .= "<a class='btn btn-danger' href='index.php?page=2&id=".$linha->teste_id."'> Excluir </a>";
-						$html .= "<a class='btn btn-success' href='index.php?page=3&id=".$linha->teste_id."'> Alterar </a>";
+						$html .= "<a class='btn btn-danger' href='index.php?page=2&id=".$linha->id."'> Excluir </a>";
+						$html .= "<a class='btn btn-success' href='index.php?page=3&id=".$linha->id."'> Alterar </a>";
 						$html .= "</td>";
-						$html .= "<td>".$linha->teste_id."</td>";
+						$html .= "<td>".$linha->id."</td>";
+						$html .= "<td>".$linha->img_leilao."</td>";
+						$html .= "<td>".$linha->nome_guitarra."</td>";
+						$html .= "<td>".$linha->marca_guitarra."</td>";
 						$html .= "<td>".$linha->descricao."</td>";
+						$html .= "<td>".$linha->lance_minimo."</td>";
+						$html .= "<td>".$linha->lance_maior."</td>";
+						$html .= "<td>".$linha->lance_arrebatamento."</td>";
+
 						$html .= "</tr>";
 						echo $html;
 				}
@@ -62,10 +78,7 @@
 		</table>
 		</div>
 	</div>
-
-<div class="form d-flex" style="visibility: hidden;">
-        <h1>asdasdasd</h1>
-
 </div>
+
 </body>
 </html>

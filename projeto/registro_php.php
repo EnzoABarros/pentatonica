@@ -21,4 +21,4 @@ if ($conn->query($sql) === true) {
         location.href = "login.php";
     </script>
     <?php
-} 
+}
