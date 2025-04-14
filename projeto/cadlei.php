@@ -27,11 +27,11 @@
   </div>
   </nav>
 
-    <h1 style="margin-top: 8rem; text-align: center; font-size: 3.5rem;">Cadastro de leilões</h1>
+    <h1 style="margin-top: 8rem; text-align: center; font-size: 3.5rem;">Leilões</h1>
 
   <div class="row" style="margin-top: 5rem;">
 		<div class="col">
-			 <a href="addlei.php" class="add">Criar leilão</a>
+			 <a href="crud/leilaoadd.php" class="add">Criar leilão</a>
 			 
 		<table class="table table-striped mt-5">
 			<thead>
