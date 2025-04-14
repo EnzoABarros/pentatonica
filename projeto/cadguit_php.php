@@ -1,17 +1,14 @@
 <?php
 session_start();
-require_once("conecta.php");
+require_once("conecta_db.php");
 
-if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo'] != 'lojista') {
-    echo "Acesso negado!";
-    exit;
-}
+$conn = conecta_db();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $marca = $_POST['marca'];
     $descricao = $_POST['descricao'];
-    $id_lojista = $_SESSION['usuario_id'];
+    $preco = $_POST['preco'];
 
     // Upload da imagem
     $imagem_nome = $_FILES['imagem']['name'];
@@ -25,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $caminho_final = $pasta_destino . uniqid() . "_" . basename($imagem_nome);
     
     if (move_uploaded_file($imagem_temp, $caminho_final)) {
-        $stmt = $conn->prepare("INSERT INTO tb_anuncio (nome_guitarra, marca_guitarra, descricao, imagem, id_lojista) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssi", $nome, $marca, $descricao, $caminho_final, $id_lojista);
+        $stmt = $conn->prepare("INSERT INTO tb_anuncio (nome_guitarra, marca_guitarra, descricao, imagem, preco) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssd", $nome, $marca, $descricao, $caminho_final, $preco);
 
         if ($stmt->execute()) {
             echo "Guitarra cadastrada com imagem com sucesso!";
