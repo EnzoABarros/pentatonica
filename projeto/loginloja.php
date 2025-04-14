@@ -31,7 +31,7 @@
 	<p class="title">Login</p>
   <form class="form" method="POST" action="autenticar.php">
   <div class="input-group">
-			<label for="usuario">Usuário</label>
+			<label for="usuario">Identificar</label>
 			<input type="text" name="usuario" id="usuario" placeholder="E-mail ou CPF">
 		</div>
 		<div class="input-group">
@@ -43,12 +43,6 @@
 		</div>
 		<button class="sign">Entrar</button>
 	</form>
-	<p class="signup">Não tem uma conta?
-		<a rel="noopener noreferrer" href="register.php" class="">Faça seu cadastro</a>
-	</p>
-  <p class="signup">Login Lojista
-		<a rel="noopener noreferrer" href="loginloja.php" class="">Clique aqui</a>
-	</p>
 </div>
   <script src="src/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
