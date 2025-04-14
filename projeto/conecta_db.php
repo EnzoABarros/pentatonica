@@ -5,7 +5,7 @@
 		$pass    = "1234";
 
 		// ALTERAR A PORTA CONFORME O COMPUTADOR QUE ESTEJA INSTALADO
-		$port    = "3308";
+		$port    = "3306";
 		$server  = "localhost:".$port;
 		// ---------------------------------------------------------------
 
