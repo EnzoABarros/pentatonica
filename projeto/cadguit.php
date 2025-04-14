@@ -27,22 +27,27 @@
   </nav>
 
   <div class="container" style="margin-top: 100px; max-width: 600px;">
-    <h2 class="mb-4">Cadastrar Guitarra</h2>
-    <form action="cadguit_php.php" method="POST">
-        <div class="mb-3">
-            <label for="nome" class="form-label">Nome da guitarra</label>
-            <input type="text" class="form-control" name="nome" required>
+    <<form action="cadguit_php.php" method="post" enctype="multipart/form-data" class="mt-5">
+    <input type="text" name="nome" placeholder="Nome da Guitarra" class="form-control mb-2" required>
+    <input type="text" name="marca" placeholder="Marca" class="form-control mb-2" required>
+    <textarea name="descricao" placeholder="Descrição" class="form-control mb-2" required></textarea>
+
+    <label class="custum-file-upload" for="file">
+        <div class="icon">
+            <img src="src/img/upload.png" alt="Upload Icon" class="img-fluid">
         </div>
-        <div class="mb-3">
-            <label for="marca" class="form-label">Marca</label>
-            <input type="text" class="form-control" name="marca" required>
+        <div class="text">
+            <span>Click to upload image</span>
         </div>
-        <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            <textarea class="form-control" name="descricao" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Cadastrar Guitarra</button>
-    </form>
+        <input type="file" id="file" name="imagem" accept="image/*" required>
+    </label>
+
+    <button type="submit" class="mt-3 btn btn-primary">Enviar</button>
+</form>
+  
+      <div class="mt-3">
+          <a href="index.php" class="btn btn-secondary">Voltar</a>
+      </div>
 </div>
 </body>
 </html>

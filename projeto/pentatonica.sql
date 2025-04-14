@@ -53,3 +53,6 @@ CREATE TABLE IF NOT EXISTS tb_compra(
 );
 
 
+ALTER TABLE tb_anuncio ADD imagem VARCHAR(255) NOT NULL;
+ALTER TABLE tb_leilao ADD imagem VARCHAR(255) NOT NULL;
+
