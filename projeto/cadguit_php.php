@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("conecta.php");
+require_once("conecta_db.php");
 
 if (!isset($_SESSION['usuario_id']) || $_SESSION['tipo'] != 'lojista') {
     echo "Acesso negado!";

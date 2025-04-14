@@ -29,7 +29,7 @@
 
   <div class="form-container card-registro">
 	<p class="title">Login</p>
-  <form class="form" method="POST" action="autenticar.php">
+  <form class="form" method="POST" action="autenticar_lojista.php">
   <div class="input-group">
 			<label for="usuario">Identificar</label>
 			<input type="text" name="usuario" id="usuario" placeholder="E-mail ou CPF">
