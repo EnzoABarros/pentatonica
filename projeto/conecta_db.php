@@ -2,7 +2,7 @@
 	function conecta_db(){
 		$db_name = "db_pentatonica";
 		$user    = "root";
-		$pass    = "1234";
+		$pass    = "";
 
 		// ALTERAR A PORTA CONFORME O COMPUTADOR QUE ESTEJA INSTALADO
 		$port    = "3306";
