@@ -26,11 +26,7 @@
         <label for="descricao">Descrição:</label>
         <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea><br><br>
 
-        <label for="modo">Modo:</label>
-        <select id="modo" name="modo" required>
-            <option value="guitarras">Guitarras</option>
-            <option value="leiloes">Leilões</option>
-        </select><br><br>
+        <input name="modo" type="text" value="guitarras" style="display: none;">
 
         <label for="categoria">Categoria:</label>
         <input type="text" id="categoria" name="categoria" required><br><br>
