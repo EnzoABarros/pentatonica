@@ -6,6 +6,7 @@ $url_atual = $_SERVER['REQUEST_URI'];
 $eh_inicio   = $url_atual === '/pentatonicaa/public/' || $url_atual === '/pentatonicaa/public/index.php';
 $eh_guitarra = strpos($url_atual, '/pentatonicaa/public/guitarras') !== false;
 $eh_leilao   = strpos($url_atual, '/pentatonicaa/public/leiloes') !== false;
+$eh_carrinho = strpos($url_atual, '/pentatonicaa/public/carrinho') !== false;
 ?>
 
 <nav class="<?= isset($_SESSION['usuario']['tipo']) && $_SESSION['usuario']['tipo'] === 'adm' ? 'adm-header' : 'header' ?>" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;">
@@ -43,7 +44,9 @@ $eh_leilao   = strpos($url_atual, '/pentatonicaa/public/leiloes') !== false;
             <a id="btn-3" href="/pentatonicaa/public/login"><button>Login</button></a>
             <a id="btn-4" href="/pentatonicaa/public/cadastro"><button>Cadastrar-se</button></a>
         <?php else: ?>
-            <a id="btn-carrinho" href="/pentatonicaa/public/carrinho"><button>Carrinho</button></a>
+            <?php if (!$eh_carrinho): ?>
+                <a id="btn-carrinho" href="/pentatonicaa/public/carrinho"><button>Carrinho</button></a>
+            <?php endif; ?>
 
             <?php if ($_SESSION['usuario']['tipo'] === 'adm'): ?>
                 <a id="btn-cadastrar-guitarra" href="/pentatonicaa/public/cadastro-guitarra"><button>Cadastrar Guitarra</button></a>
@@ -51,7 +54,6 @@ $eh_leilao   = strpos($url_atual, '/pentatonicaa/public/leiloes') !== false;
             <?php endif; ?>
             
             <a href="/pentatonicaa/public/logout"><button>Sair</button></a>
-
         <?php endif; ?>
     </div>
 </nav>
@@ -63,6 +65,4 @@ $eh_leilao   = strpos($url_atual, '/pentatonicaa/public/leiloes') !== false;
         menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
         icon.style.filter = (menu.style.display === 'flex') ? 'invert(1)' : 'none';
     }
-
 </script>
-
