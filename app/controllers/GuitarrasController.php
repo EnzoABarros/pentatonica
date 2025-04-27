@@ -104,16 +104,14 @@ class GuitarrasController {
     
 
     public function leiloes() {
-        $guitarrasModel = new Guitarra();
+        $filtrosGet = $_GET;
+        $leilaoModel = new Leilao();
 
-        if (!empty($_GET)) {
-            $guitarras = $guitarrasModel->filtrar($_GET);
-        } else {
-            $guitarras = $guitarrasModel->listarGuitarras("leiloes");
-        }
+        $leiloes = $leilaoModel->listarLeiloes($filtrosGet);
 
         require_once __DIR__ . '/../views/pages/leiloes.php';
     }
+
 
     public function comprar() {
         $guitarrasModel = new Guitarra();
@@ -196,6 +194,73 @@ class GuitarrasController {
             return null;
         }
     }
+
+    public function editaLeilao() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+    
+            $leilaoModel = new Leilao();
+            $leilao = $leilaoModel->buscarPorId($id);
+    
+            if (!$leilao) {
+                echo "<script>alert('Leilão não encontrado.'); history.go(-1);</script>";
+                return;
+            }
+    
+            require_once __DIR__ . '/../views/pages/editarLei.php';
+        } else {
+            echo "<script>alert('ID do leilão não informado.'); history.go(-1);</script>";
+        }
+    }
+
+    public function editarLeilao() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $modelo = $_POST['modelo'];
+            $marca = $_POST['marca'];
+            $preco_inicio = $_POST['preco_inicial'];
+            $descricao = $_POST['descricao'];
+            $categoria = $_POST['categoria'];
+            $modo = $_POST['modo'];
+            $data_fim = $_POST['data_final'];
+    
+            $imagem = null;
+            if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0) {
+                $imagem = $this->uploadImagem($_FILES['imagem']);
+            } else {
+                $leilaoModel = new Leilao();
+                $leilao = $leilaoModel->buscarPorId($id);
+                $imagem = $leilao['url_imagem'];
+            }
+    
+            $leilaoModel = new Leilao();
+            $resultado = $leilaoModel->atualizar($id, $modelo, $marca, $preco_inicio, $descricao, $categoria, $modo, $data_fim, $imagem);
+    
+            if ($resultado) {
+                echo "<script>alert('Leilão atualizado com sucesso!'); history.go(-2);</script>";
+            } else {
+                echo "<script>alert('Erro ao atualizar o leilão!'); history.go(-1);</script>";
+            }
+        }
+    }
+
+    public function removerLeilao() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+    
+            $leilaoModel = new Leilao();
+            $resultado = $leilaoModel->removerLeilao($id);
+    
+            if ($resultado) {
+                echo "<script>alert('Leilão removido com sucesso!'); history.go(-1);</script>";
+            } else {
+                echo "<script>alert('Erro ao remover o leilão!'); history.go(-1);</script>";
+            }
+        } else {
+            echo "<script>alert('ID do leilão não informado.'); history.go(-1);</script>";
+        }
+    }
+    
     
     
 }

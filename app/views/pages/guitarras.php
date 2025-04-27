@@ -97,9 +97,9 @@
                         </div>
                         <div class="card-infos">
                             <div class="infos">
-                                <p>Marca: <?= htmlspecialchars($guitarra['marca']) ?></p>
-                                <p>Preço: R$ <?= number_format($guitarra['preco'], 2, ',', '.') ?></p>
-                                <p>Categoria: <?= htmlspecialchars($guitarra['categoria']) ?></p>
+                                <p><?= htmlspecialchars($guitarra['marca']) ?></p>
+                                <p><?= number_format($guitarra['preco'], 2, ',', '.') ?></p>
+                                <p><?= htmlspecialchars($guitarra['categoria']) ?></p>
                             </div>
                             <div class="acoes">
                                 <?php if (!isset($_SESSION["usuario"])): ?>
