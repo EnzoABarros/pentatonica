@@ -78,17 +78,20 @@
                 <?php foreach ($guitarras as $guitarra): ?>
                     <div class="card-guitarra">
                         <h2><?= htmlspecialchars($guitarra['modelo']) ?></h2>
-                        <?php if ($_SESSION['usuario']['tipo'] === 'adm'): ?>
-                            <div class="adm-acoes">
-                                <a class="remove-guit" href="/pentatonicaa/public/remover-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
-                                    <button style="background-color: red; color: white;">Remover</button>
-                                </a>
-                                <a class="remove-guit" href="/pentatonicaa/public/edita-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
-                                    <button style="background-color: blue; color: white;">Editar</button>
-                                </a>
-                            </div>
-
+                        <?php if (isset($_SESSION['usuario'])): ?>
+                            <?php if ($_SESSION['usuario']['tipo'] === 'adm'): ?>
+                                <div class="adm-acoes">
+                                    <a class="remove-guit" href="/pentatonicaa/public/remover-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
+                                        <button style="background-color: red; color: white;">Remover</button>
+                                    </a>
+                                    <a class="remove-guit" href="/pentatonicaa/public/edita-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
+                                        <button style="background-color: blue; color: white;">Editar</button>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
                         <?php endif; ?>
+
+
                         <div class="img-guitarra">
                             <img src="<?= htmlspecialchars($guitarra['url_imagem']) ?>" alt="<?= htmlspecialchars($guitarra['modelo']) ?>">
                         </div>
