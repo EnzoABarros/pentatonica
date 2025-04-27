@@ -114,6 +114,21 @@ class Guitarra {
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
+
+    public function atualizar($id, $modelo, $marca, $preco, $descricao, $categoria, $imagem = null) {
+        $sql = "UPDATE tb_guitarra SET modelo = ?, marca = ?, preco = ?, descricao = ?, categoria = ?"
+             . ($imagem ? ", url_imagem = ?" : "") . " WHERE id = ?";
+    
+        $stmt = $this->db->prepare($sql);
+    
+        if ($imagem) {
+            $stmt->bind_param("ssdsssi", $modelo, $marca, $preco, $descricao, $categoria, $imagem, $id);
+        } else {
+            $stmt->bind_param("ssdssi", $modelo, $marca, $preco, $descricao, $categoria, $id);
+        }
+    
+        return $stmt->execute();
+    }
     
     
 }

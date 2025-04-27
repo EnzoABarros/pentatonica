@@ -53,7 +53,7 @@ class GuitarrasController {
                     $guitarra = new Guitarra();
                     $guitarra->cadastrar($modelo, $marca, $preco, $descricao, $categoria, $modo, $urlImagem);
     
-                    echo "<script>alert('Guitarra cadastrada com sucesso!'); history.go(-1);</script>";
+                    echo "<script>alert('Guitarra cadastrada com sucesso!'); history.go(-2);</script>";
                 } else {
                     echo "<script>alert('Erro ao mover a imagem.'); history.go(-1);</script>";
                 }
@@ -92,7 +92,7 @@ class GuitarrasController {
                     $leilao = new Leilao();
                     $leilao->cadastrarLeilao($modelo, $marca, $preco_inicio, $descricao, $categoria, $modo, $data_fim, $urlImagem);
     
-                    echo "<script>alert('Leilão cadastrado com sucesso!'); history.go(-1);</script>";
+                    echo "<script>alert('Leilão cadastrado com sucesso!'); history.go(-2);</script>";
                 } else {
                     echo "<script>alert('Erro ao mover a imagem.'); history.go(-1);</script>";
                 }
@@ -132,5 +132,70 @@ class GuitarrasController {
 
         echo "<script>alert('Guitarra removida com sucesso!'); history.go(-1);</script>";
     }
+    
+    public function editaGuitarra() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+    
+            $guitarrasModel = new Guitarra();
+    
+            $guitarra = $guitarrasModel->buscarPorId($id);
+    
+            if (!$guitarra) {
+                echo "<script>alert('Guitarra não encontrada.'); history.go(-1);</script>";
+                return;
+            }
+    
+            require_once __DIR__ . '/../views/pages/editarGuit.php';
+        } else {
+            echo "<script>alert('ID da guitarra não informado.'); history.go(-1);</script>";
+        }
+    }
+
+    public function editarGuitarra() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $modelo = $_POST['modelo'];
+            $marca = $_POST['marca'];
+            $preco = $_POST['preco'];
+            $descricao = $_POST['descricao'];
+            $categoria = $_POST['categoria'];
+    
+            $imagem = null;
+            if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0) {
+                $imagem = $this->uploadImagem($_FILES['imagem']);
+            } else {
+                $guitarrasModel = new Guitarra();
+                $guitarra = $guitarrasModel->buscarPorId($id);
+                $imagem = $guitarra['url_imagem'];
+            }
+    
+            $guitarrasModel = new Guitarra();
+            $resultado = $guitarrasModel->atualizar($id, $modelo, $marca, $preco, $descricao, $categoria, $imagem);
+    
+            if ($resultado) {
+                echo "<script>alert('Guitarra atualizada com sucesso!'); history.go(-2);</script>";
+            } else {
+                echo "<script>alert('Erro ao atualizar a guitarra!'); history.go(-1);</script>";
+            }
+        }
+    }
+    
+    private function uploadImagem($file) {
+        $diretorio = __DIR__ . "/../public/uploads/guitarras/";
+        if (!is_dir($diretorio)) {
+            mkdir($diretorio, 0777, true);
+        }
+    
+        $nomeImagem = uniqid('guitarra_') . '.' . pathinfo($file['name'], PATHINFO_EXTENSION);
+        $caminhoImagem = $diretorio . $nomeImagem;
+    
+        if (move_uploaded_file($file['tmp_name'], $caminhoImagem)) {
+            return $nomeImagem;
+        } else {
+            return null;
+        }
+    }
+    
     
 }
