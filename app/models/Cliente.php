@@ -10,6 +10,7 @@ class Cliente {
     }
 
     public function cadastrar($nome, $email, $cpf, $senha) {
+        $tipo = "cliente";
         if ($this->existeEmail($email)) {
             return "email";
         }
@@ -18,11 +19,11 @@ class Cliente {
             return "cpf";
         }
 
-        $sql = "INSERT INTO tb_usuarios (nome, email, cpf, senha) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO tb_usuarios (nome, email, cpf, senha, tipo) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($sql);
 
         $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-        $stmt->bind_param("ssss", $nome, $email, $cpf, $senhaHash);
+        $stmt->bind_param("sssss", $nome, $email, $cpf, $senhaHash, $tipo);
 
         if ($stmt->execute()) {
             return true;

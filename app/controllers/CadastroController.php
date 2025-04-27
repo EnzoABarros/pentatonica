@@ -31,7 +31,8 @@ class CadastroController {
                 $_SESSION['usuario'] = [
                     'nome' => $nome,
                     'email' => $email,
-                    'cpf' => $cpf
+                    'cpf' => $cpf,
+                    'tipo' => 'cliente'
                 ];
     
                 header("Location: /pentatonicaa/public/");
