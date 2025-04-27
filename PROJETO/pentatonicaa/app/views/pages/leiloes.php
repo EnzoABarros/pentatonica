@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pentatonica | Leilões</title>
-    <link rel="stylesheet" type="text/css" href="/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
     <link rel="icon" href="/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
 <body>

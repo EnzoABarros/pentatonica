@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pentatonica</title>
-    <link rel="stylesheet" type="text/css" href="/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
     <link rel="icon" href="/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
 <body>
