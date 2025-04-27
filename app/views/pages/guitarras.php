@@ -29,6 +29,7 @@
             </div>
 
             <div class="filtro-titulo">Marca</div>
+            
             <div class="filtro-conteudo">
                 <?php 
                 $marcas = ["Fender", "Gibson", "Ibanez", "Epiphone", "Jackson", "PRS", "ESP", "Gretsch"];
@@ -71,11 +72,17 @@
 
     <div class="guitarras-encontradas">
         <h1>Catálogo de Guitarras</h1>
+        
         <div class="container-guitarras">
             <?php if (!empty($guitarras)): ?>
                 <?php foreach ($guitarras as $guitarra): ?>
                     <div class="card-guitarra">
                         <h2><?= htmlspecialchars($guitarra['modelo']) ?></h2>
+                        <?php if ($_SESSION['usuario']['tipo'] === 'adm'): ?>
+                            <a class="remove-guit" href="/pentatonicaa/public/remover-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
+                                <button style="background-color: red; color: white;">Remover</button>
+                            </a>
+                        <?php endif; ?>
                         <div class="img-guitarra">
                             <img src="<?= htmlspecialchars($guitarra['url_imagem']) ?>" alt="<?= htmlspecialchars($guitarra['modelo']) ?>">
                         </div>
@@ -100,6 +107,7 @@
                                 <?php endif; ?>
                             </div>
                         </div>
+                        
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>

@@ -103,6 +103,17 @@ class Guitarra {
         return $guitarras;
     }
     
+    public function removerGuitarra($id) {
+        $sql = "DELETE FROM tb_carrinho WHERE id_guitarra = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+    
+        $sql = "DELETE FROM tb_guitarra WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
+    }
     
     
 }

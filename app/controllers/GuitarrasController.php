@@ -123,5 +123,14 @@ class GuitarrasController {
         require_once __DIR__ . '/../views/pages/comprar.php';
 
     }
+
+    public function removerGuitarra() {
+
+        $guitarrasModel = new Guitarra();
+
+        $guitarrasModel->removerGuitarra($_GET['id']);
+
+        echo "<script>alert('Guitarra removida com sucesso!'); history.go(-1);</script>";
+    }
     
 }

@@ -23,6 +23,7 @@ $router->addRoute('/cadastro-guitarra', 'GuitarrasController@cadastroGuitarra');
 $router->addRoute('/cadastro-leilao', 'GuitarrasController@cadastroLeilao');
 $router->addRoute('/cadastrar-guitarra', 'GuitarrasController@cadastrarGuitarra');
 $router->addRoute('/cadastrar-leilao', 'GuitarrasController@cadastrarLeilao');
+$router->addRoute('/remover-guitarra', 'GuitarrasController@removerGuitarra');
 $router->addRoute('/carrinho', 'CarrinhoController@carrinho');
 $router->addRoute('/adicionar-carrinho', 'CarrinhoController@adicionarCarrinho');
 $router->addRoute('/remover-carrinho', 'CarrinhoController@removerCarrinho');

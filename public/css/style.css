@@ -471,3 +471,16 @@ h1 {
   justify-content: center;
   text-decoration: none;
 }
+
+.remove-guit {
+  margin-bottom: 10px;
+  margin-top: -20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.remove-guit button{
+  width: 60%;
+}
