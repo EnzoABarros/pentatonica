@@ -48,7 +48,7 @@ class GuitarrasController {
                 $caminhoCompleto = $caminhoUploads . $nomeFinal;
     
                 if (move_uploaded_file($nomeTemp, $caminhoCompleto)) {
-                    $urlImagem = '/pentatonicaa/public/uploads/' . $nomeFinal;
+                    $urlImagem = '/pentatonicaa/PROJETO/pentatonicaa/public/uploads/' . $nomeFinal;
     
                     $guitarra = new Guitarra();
                     $guitarra->cadastrar($modelo, $marca, $preco, $descricao, $categoria, $modo, $urlImagem);
@@ -87,7 +87,7 @@ class GuitarrasController {
                 $caminhoCompleto = $caminhoUploads . $nomeFinal;
     
                 if (move_uploaded_file($nomeTemp, $caminhoCompleto)) {
-                    $urlImagem = '/pentatonicaa/public/uploads/' . $nomeFinal;
+                    $urlImagem = '/pentatonicaa/PROJETO/pentatonicaa/public/uploads/' . $nomeFinal;
     
                     $leilao = new Leilao();
                     $leilao->cadastrarLeilao($modelo, $marca, $preco_inicio, $descricao, $categoria, $modo, $data_fim, $urlImagem);

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pentatonica | Catálogo</title>
     <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
-    <link rel="icon" href="/pentatonicaa/public/images/logo.png" type="image/png">
+    <link rel="icon" href="/pentatonicaa/PROJETO/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
 <body>
 <?php require_once __DIR__ . "/../layouts/header.php" ?>
@@ -81,10 +81,10 @@
                         <?php if (isset($_SESSION['usuario'])): ?>
                             <?php if ($_SESSION['usuario']['tipo'] === 'adm'): ?>
                                 <div class="adm-acoes">
-                                    <a class="remove-guit" href="/pentatonicaa/public/remover-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
+                                    <a class="remove-guit" href="/pentatonicaa/PROJETO/pentatonicaa/public/remover-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
                                         <button style="background-color: red; color: white;">Remover</button>
                                     </a>
-                                    <a class="remove-guit" href="/pentatonicaa/public/edita-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
+                                    <a class="remove-guit" href="/pentatonicaa/PROJETO/pentatonicaa/public/edita-guitarra?id=<?= htmlspecialchars($guitarra['id']) ?>">
                                         <button style="background-color: blue; color: white;">Editar</button>
                                     </a>
                                 </div>
@@ -109,7 +109,7 @@
                                     <a href="comprar?id=<?= htmlspecialchars($guitarra['id']) ?>">
                                         <button>Comprar</button>
                                     </a>
-                                    <a href="/pentatonicaa/public/adicionar-carrinho?id=<?= htmlspecialchars($guitarra['id']) ?>">
+                                    <a href="/pentatonicaa/PROJETO/pentatonicaa/public/adicionar-carrinho?id=<?= htmlspecialchars($guitarra['id']) ?>">
                                         <button>Carrinho</button>
                                     </a>
 

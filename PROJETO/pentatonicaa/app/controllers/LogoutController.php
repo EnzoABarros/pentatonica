@@ -8,7 +8,7 @@ class LogoutController {
 
         Cliente::sair();
 
-        header("Location: /pentatonicaa/public/");
+        header("Location: /pentatonicaa/PROJETO/pentatonicaa/public/");
         exit;
     }
 }

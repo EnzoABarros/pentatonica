@@ -21,10 +21,10 @@ class CarrinhoController {
             $guitarraModel = new Guitarra();
             $guitarra = $guitarraModel->buscarPorId($id);
             $carrinhoModel->adicionarCarrinho($_SESSION['usuario']['id'], $guitarra['id'], 1);
-            header("Location: /pentatonicaa/public/carrinho");
+            header("Location: /pentatonicaa/PROJETO/pentatonicaa/public/carrinho");
             exit;
         } else {
-            header("Location: /pentatonicaa/public/guitarras");
+            header("Location: /pentatonicaa/PROJETO/pentatonicaa/public/guitarras");
             exit;
         }
     }
@@ -35,10 +35,10 @@ class CarrinhoController {
             $id = $_GET['id'];
             $carrinhoModel = new Carrinho();
             $carrinhoModel->removerCarrinho($_SESSION['usuario']['id'], $id);
-            header("Location: /pentatonicaa/public/carrinho");
+            header("Location: /pentatonicaa/PROJETO/pentatonicaa/public/carrinho");
             exit;
         } else {
-            header("Location: /pentatonicaa/public/guitarras");
+            header("Location: /pentatonicaa/PROJETO/pentatonicaa/public/guitarras");
             exit;
         }
     }

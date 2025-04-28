@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pentatonica | Leilões</title>
     <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
-    <link rel="icon" href="/pentatonicaa/public/images/logo.png" type="image/png">
+    <link rel="icon" href="/pentatonicaa/PROJETO/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
 <body>
 <?php require_once __DIR__ . "/../layouts/header.php" ?>
@@ -82,10 +82,10 @@
 
                             <?php if ($_SESSION['usuario']['tipo'] === 'adm'): ?>
                                 <div class="adm-acoes">
-                                    <a class="remove-leilao" href="/pentatonicaa/public/remover-leilao?id=<?= htmlspecialchars($leilao['id']) ?>">
+                                    <a class="remove-leilao" href="/pentatonicaa/PROJETO/pentatonicaa/public/remover-leilao?id=<?= htmlspecialchars($leilao['id']) ?>">
                                         <button style="background-color: red; color: white;">Remover</button>
                                     </a>
-                                    <a class="edit-leilao" href="/pentatonicaa/public/edita-leilao?id=<?= htmlspecialchars($leilao['id']) ?>">
+                                    <a class="edit-leilao" href="/pentatonicaa/PROJETO/pentatonicaa/public/edita-leilao?id=<?= htmlspecialchars($leilao['id']) ?>">
                                         <button style="background-color: blue; color: white;">Editar</button>
                                     </a>
                                 </div>
@@ -107,7 +107,7 @@
                                 <?php if (!isset($_SESSION["usuario"])): ?>
                                     <button style="width: 100%; margin-right: 10px;" onclick="alert('Realize o login para participar do leilão')">Participar</button>
                                 <?php else: ?>
-                                    <a  href="/pentatonicaa/public/participar-leilao?id=<?= htmlspecialchars($leilao['id']) ?>">
+                                    <a  href="/pentatonicaa/PROJETO/pentatonicaa/public/participar-leilao?id=<?= htmlspecialchars($leilao['id']) ?>">
                                         <button style="width: 100%; margin-right: 10px;">participar</button>
                                     </a>
                                 <?php endif; ?>

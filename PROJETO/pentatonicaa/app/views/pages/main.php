@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>Pentatonica</title>
     <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
-    <link rel="icon" href="/pentatonicaa/public/images/logo.png" type="image/png">
+    <link rel="icon" href="/pentatonicaa/PROJETO/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
 <body>
     <?php require_once __DIR__ . "/../layouts/header.php" ?>
 
     <div class="slider">
         <div class="slides">
-            <img src="/pentatonicaa/public/images/banner1.png" class="slide active">
-            <img src="/pentatonicaa/public/images/banner2.png" class="slide">
-            <img src="/pentatonicaa/public/images/banner3.png" class="slide">
+            <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/banner1.png" class="slide active">
+            <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/banner2.png" class="slide">
+            <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/banner3.png" class="slide">
         </div>
 
         <div class="indicators">

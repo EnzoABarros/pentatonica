@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pentatonica | Login</title>
     <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
-    <link rel="icon" href="/pentatonicaa/public/images/logo.png" type="image/png">
+    <link rel="icon" href="/pentatonicaa/PROJETO/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
 <style>
     body {
@@ -21,7 +21,7 @@
 <body>
     <div class="form">
         <div class="sobre">
-            <img src="/pentatonicaa/public/images/logo.png" alt="Logo">
+            <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/logo.png" alt="Logo">
             <img id="guits" src="https://img.freepik.com/vetores-premium/conjunto-de-guitarras-eletricas-de-rock-diferente-imagens-monocromaticas-de-vetor_80590-1404.jpg" alt="Guitarras">
         </div>
         <div class="inputs">
@@ -41,8 +41,8 @@
 
             <button type="submit">Entrar</button>
             </form>
-            <p>Continuar sem login: <a href="/pentatonicaa/public">Explorar</a></p>
-            <p>Não tem uma conta? <a href="/pentatonicaa/public/cadastro">Cadastre-se</a></p>
+            <p>Continuar sem login: <a href="/pentatonicaa/PROJETO/pentatonicaa/public">Explorar</a></p>
+            <p>Não tem uma conta? <a href="/pentatonicaa/PROJETO/pentatonicaa/public/cadastro">Cadastre-se</a></p>
 
         </div>
     </div>

@@ -10,7 +10,7 @@ class Router {
         $uri = $_SERVER['REQUEST_URI'];
         $uri = parse_url($uri, PHP_URL_PATH);
     
-        $base = '/pentatonicaa/PROJETO/pentatonicaa/public/';
+        $base = '/pentatonicaa/PROJETO/pentatonicaa/public';
         if (str_starts_with($uri, $base)) {
             $uri = substr($uri, strlen($base));
         }

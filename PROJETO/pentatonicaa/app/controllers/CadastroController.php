@@ -35,7 +35,7 @@ class CadastroController {
                     'tipo' => 'cliente'
                 ];
     
-                header("Location: /pentatonicaa/public/");
+                header("Location: /pentatonicaa/PROJETO/pentatonicaa/public/");
                 exit;
             } elseif ($resultado === "email") {
                 echo "<script>alert('Este e-mail já está em uso.'); history.back();</script>";

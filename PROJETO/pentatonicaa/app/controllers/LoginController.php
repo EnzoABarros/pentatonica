@@ -33,7 +33,7 @@ class LoginController {
                 session_start();
                 $_SESSION['usuario'] = $usuario;
     
-                header("Location: /pentatonicaa/public/");
+                header("Location: /pentatonicaa/PROJETO/pentatonicaa/public/");
                 exit;
             } else {
                 echo "<script>alert('Credenciais inválidas. Verifique seu email e senha.'); history.back();</script>";
