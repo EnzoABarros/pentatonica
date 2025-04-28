@@ -396,10 +396,11 @@ h1 {
   border: solid 2px rgb(20, 20, 20);
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
+  overflow: hidden;
 }
 
 .img-compra img {
-  height: 95%;
+  height: 100%;
   object-fit: cover;
 }
 
