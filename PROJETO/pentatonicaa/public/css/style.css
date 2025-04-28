@@ -483,16 +483,15 @@ h1 {
 .adm-acoes button{
   width: 100%;
 }
-<<<<<<< HEAD
-=======
 
 .guia {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .guia img {
+  width: 400px;
   text-align: center; 
   padding: 10px; 
+  margin-bottom: 50px;
 }
->>>>>>> 42161286ea7de0d81b27c667df6179b535f39955
