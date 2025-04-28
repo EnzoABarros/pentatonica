@@ -11,9 +11,9 @@
 
     <div class="slider">
         <div class="slides">
-            <img src="/pentatonicaa/public/images/banner1.png" class="slide active">
-            <img src="/pentatonicaa/public/images/banner2.png" class="slide">
-            <img src="/pentatonicaa/public/images/banner3.png" class="slide">
+            <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/banner1.png" class="slide active">
+            <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/banner2.png" class="slide">
+            <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/banner3.png" class="slide">
         </div>
 
         <div class="indicators">
