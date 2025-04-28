@@ -6,6 +6,7 @@ require_once __DIR__ . '/../app/controllers/CadastroController.php';
 require_once __DIR__ . '/../app/controllers/LogoutController.php';
 require_once __DIR__ . '/../app/controllers/LoginController.php';
 require_once __DIR__ . '/../app/controllers/CarrinhoController.php';
+require_once __DIR__ . '/../app/controllers/GuiasController.php';
 
 
 $router = new Router();
@@ -32,5 +33,6 @@ $router->addRoute('/editar-leilao', 'GuitarrasController@editarLeilao');
 $router->addRoute('/carrinho', 'CarrinhoController@carrinho');
 $router->addRoute('/adicionar-carrinho', 'CarrinhoController@adicionarCarrinho');
 $router->addRoute('/remover-carrinho', 'CarrinhoController@removerCarrinho');
+$router->addRoute('/guia', 'GuiasController@guia');
 
 $router->run();
