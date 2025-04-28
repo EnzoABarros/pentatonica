@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pentatonica</title>
-    <link rel="stylesheet" type="text/css" href="/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
     <link rel="icon" href="/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
 <body>
@@ -50,34 +50,34 @@
 
     <div class="guia">
   <a class="guias" href="guia?guia=stratocaster">
-    <img src="/pentatonicaa/public/images/stratocaster.png" alt="">
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/stratocaster.png" alt="">
     </a>
   <a class="guias" href="guia?guia=lespaul">
-    <img src="/pentatonicaa/public/images/lespaul.png" alt="">
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/lespaul.png" alt="">
   </a>
 
   <a class="guias" href="guia?guia=telecaster">
-    <img src="/pentatonicaa/public/images/telecaster.png" alt="">
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/telecaster.png" alt="">
     </a>
 
     <a class="guias" href="guia?guia=sg">
-    <img src="/pentatonicaa/public/images/sg.png" alt="">
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/sg.png" alt="">
     </a>
 
     <a class="guias" href="guia?guia=superstrato">
-    <img src="/pentatonicaa/public/images/superstratocaster.png" alt="">
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/superstratocaster.png" alt="">
     </a>
 
     <a class="guias" href="guia?guia=flyingv">
-    <img src="/pentatonicaa/public/images/flyingv.png" alt="">
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/flyingv.png" alt="">
     </a>
 
     <a class="guias" href="guia?guia=semiacustica">
-    <img src="/pentatonicaa/public/images/semiacustica.png" alt="">  
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/semiacustica.png" alt="">  
     </a>
 
     <a class="guias" href="guia?guia=quiz">
-      <img src="/pentatonicaa/public/images/quiz.png" alt="">
+      <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/quiz.png" alt="">
     </a>
 </div>
 
