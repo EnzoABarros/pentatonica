@@ -7,17 +7,17 @@
     <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
     <link rel="icon" href="/pentatonicaa/PROJETO/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
-<body>
+<body class="body-carrinho">
 <?php require_once __DIR__ . "/../layouts/header.php" ?>
 
 <br><br><br><br><br>
 
-<h1>Carrinho de Compras</h1>
+<h1 class="titulo-carrinho">Carrinho de Compras</h1>
 
 <?php if (empty($itensCarrinho)): ?>
     <p>Seu carrinho está vazio.</p>
 <?php else: ?>
-    <table>
+    <table class="tabela-carrinho">
         <thead>
             <tr>
                 <th>Produto</th>
@@ -55,11 +55,12 @@
         </tbody>
     </table>
 
-    <div>
-        <h3>Total do Carrinho: R$ 
+    <div class="finalizar-carrinho">
+        <p>Total do Carrinho: R$ 
             <?php echo number_format($totalCarrinho, 2, ',', '.'); ?>
-        </h3>
+            </p>
         <a href="">Finalizar Compra</a>
+    </div>
 
 <?php endif; ?>
 

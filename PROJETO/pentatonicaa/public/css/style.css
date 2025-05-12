@@ -497,3 +497,83 @@ h1 {
   padding: 10px; 
   margin-bottom: 50px;
 }
+
+.tabela-carrinho {
+  width: 85vw;
+  border: double 10px rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.tabela-carrinho td{
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top: solid 2px rgb(20, 20, 20);
+  border-left: solid 2px rgb(20, 20, 20);
+}
+
+.tabela-carrinho td:first-child {
+  border-left: none;
+}
+
+.tabela-carrinho td a{
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: rgb(255, 0, 0);
+  padding: 10px 25px;
+  border-radius: 10px;
+  transition: transform 0.1s ease-out;
+}
+
+.tabela-carrinho td a:hover {
+  transform: scale(1.05);
+}
+
+
+.titulo-carrinho {
+  margin-top: -70px;
+}
+
+.body-carrinho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 40px;
+  }
+}
+
+.finalizar-carrinho {
+  position: relative;
+  margin-left: -850px;
+  margin-bottom: 50px;
+}
+
+.finalizar-carrinho p {
+  font-size: 25px;
+}
+
+.finalizar-carrinho a {
+  height: 60px;
+  background-color: transparent;
+  border: solid 2px rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-family: "Roboto Mono", monospace;
+  transition: ease-out 0.3s;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.finalizar-carrinho a:hover {
+  color: rgb(255, 255, 255);
+  box-shadow: inset 0 -100px 0 0 rgb(20, 20, 20);
+  border: none;
+  cursor: pointer;
+}
+
+.finalizar-carrinho a:active {
+  transform: scale(0.9);
+}
