@@ -54,7 +54,8 @@
         <h5 style="text-align: center; font-size: 50px;">Stevie Ray Vaughan</h5>
         
         <p style="font-size: 25px; margin-left: 30px; margin-right: 15px;">
-            Stephen "Stevie" Ray Vaughan, foi um guitarrista, cantor e compositor de blues norte-americano. Foi um dos principais músicos do estilo blues rock.
+            Stephen "Stevie" Ray Vaughan, foi um guitarrista, cantor e compositor de blues norte-americano. Foi um dos principais músicos do estilo blues rock, tendo um feeling único
+            em suas músicas.
             Sempre utilizou Stratocasters, que caracterizam seu timbre único.
         </p>
     </div>
