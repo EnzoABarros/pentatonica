@@ -61,7 +61,7 @@
         </p>
     </div>
 
-    <img src="https://static.wixstatic.com/media/607c45_81ff30b4b8cb456e9234c8c4d79f3526~mv2.jpg/v1/fill/w_568,h_378,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/607c45_81ff30b4b8cb456e9234c8c4d79f3526~mv2.jpg" alt="Imagem de Jimi Hendrix" style="width: 800px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Slash_in_2008.jpg" alt="Imagem de Slash" style="width: 800px;">
 </div>
 
 

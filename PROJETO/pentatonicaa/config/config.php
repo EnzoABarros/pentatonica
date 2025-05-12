@@ -5,6 +5,6 @@ return [
         'port' => '3306',
         'name' => 'db_pentatonica',
         'user' => 'root',
-        'pass' => ''
+        'pass' => '1234'
     ]
 ];
