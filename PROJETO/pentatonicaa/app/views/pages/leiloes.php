@@ -107,7 +107,7 @@
                                 <?php if (!isset($_SESSION["usuario"])): ?>
                                     <button style="width: 100%; margin-right: 10px;" onclick="alert('Realize o login para participar do leilão')">Participar</button>
                                 <?php else: ?>
-                                    <a  href="/pentatonicaa/PROJETO/pentatonicaa/public/participar-leilao?id=<?= htmlspecialchars($leilao['id']) ?>">
+                                    <a  href="/pentatonicaa/PROJETO/pentatonicaa/public/participar?id=<?= htmlspecialchars($leilao['id']) ?>">
                                         <button style="width: 100%; margin-right: 10px;">participar</button>
                                     </a>
                                 <?php endif; ?>

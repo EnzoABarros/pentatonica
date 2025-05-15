@@ -34,5 +34,8 @@ $router->addRoute('/carrinho', 'CarrinhoController@carrinho');
 $router->addRoute('/adicionar-carrinho', 'CarrinhoController@adicionarCarrinho');
 $router->addRoute('/remover-carrinho', 'CarrinhoController@removerCarrinho');
 $router->addRoute('/guia', 'GuiasController@guia');
+$router->addRoute('/participar', 'GuitarrasController@participar');
+$router->addRoute('/lance', 'GuitarrasController@lance');
+
 
 $router->run();

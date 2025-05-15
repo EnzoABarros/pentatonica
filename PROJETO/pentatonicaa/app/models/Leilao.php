@@ -96,5 +96,37 @@ class Leilao {
         return $stmt->execute();
     }
 
+    public function atualizarPrecoAtual($id, $novoPreco, $id_usuario, $id_guitarra, $valor_lance) {
+        $sql = "UPDATE tb_leilao SET preco_atual = ? WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("di", $novoPreco, $id);
+        
+        if (!$stmt->execute()) {
+            return false;
+        }
+
+        $sql_lance = "INSERT INTO tb_lances (id_usuario, id_guitarra, valor_lance) VALUES (?, ?, ?)";
+        $stmt_lance = $this->db->prepare($sql_lance);
+        $stmt_lance->bind_param("iis", $id_usuario, $id_guitarra, $valor_lance);
+
+        return $stmt_lance->execute();
+    }
+
+
+    public function buscarTop3Lances($id_guitarra) {
+        $sql = "SELECT u.nome, l.valor_lance
+                FROM tb_lances l
+                JOIN tb_usuarios u ON l.id_usuario = u.id
+                WHERE l.id_guitarra = ?
+                ORDER BY l.valor_lance DESC
+                LIMIT 3";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id_guitarra);
+        $stmt->execute();
+
+        $resultado = $stmt->get_result();
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
 
 }

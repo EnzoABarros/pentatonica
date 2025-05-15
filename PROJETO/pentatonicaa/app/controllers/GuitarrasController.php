@@ -122,6 +122,61 @@ class GuitarrasController {
 
     }
 
+    public function participar() {
+        $leilaoModel = new Leilao();
+
+        $id = $_GET['id'];
+
+        $leilao = $leilaoModel->buscarPorId($id);
+
+        $leilao['top_lances'] = $leilaoModel->buscarTop3Lances($id);
+
+        require_once __DIR__ . '/../views/pages/participar.php';
+
+    }
+
+    public function lance() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['leilao_id']) && isset($_POST['valor_lance'])) {
+            session_start();
+            $leilaoId = $_POST['leilao_id'];
+            $novoPreco = (float)$_POST['valor_lance'];
+
+            $leilaoModel = new Leilao();
+            $leilao = $leilaoModel->buscarPorId($leilaoId);
+
+            if (!$leilao) {
+                echo "<script>alert('Leilão não encontrado.'); history.go(-1);</script>";
+                exit;
+            }
+
+            $precoAtual = $leilao['preco_atual'] ?? null;
+            $precoBase = $precoAtual ?: $leilao['preco_inicio'];
+
+            if ($novoPreco > $precoBase) {
+                $id_usuario = $_SESSION['usuario']['id'] ?? null;
+                if (!$id_usuario) {
+                    echo "<script>alert('Usuário não autenticado.'); history.go(-1);</script>";
+                    exit;
+                }
+
+                $id_guitarra = $leilaoId;
+
+                $atualizado = $leilaoModel->atualizarPrecoAtual($leilaoId, $novoPreco, $id_usuario, $id_guitarra, $novoPreco);
+
+                if ($atualizado) {
+                    echo "<script>alert('Lance realizado com sucesso!'); history.go(-1);</script>";
+                } else {
+                    echo "<script>alert('Erro ao registrar o lance.'); history.go(-1);</script>";
+                }
+            } else {
+                echo "<script>alert('O novo lance deve ser maior que o lance atual.'); history.go(-1);</script>";
+            }
+        } else {
+            echo "<script>alert('Requisição inválida.'); history.go(-1);</script>";
+        }
+    }
+
+
     public function removerGuitarra() {
 
         $guitarrasModel = new Guitarra();
