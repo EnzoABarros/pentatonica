@@ -76,5 +76,19 @@ class Cliente {
     
         return false;
     }
+    public function buscarPorId($id) {
+    $sql = "SELECT id, nome, email, endereco FROM tb_usuarios WHERE id = ?";
+    $stmt = $this->db->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+
+    if ($resultado->num_rows > 0) {
+        return $resultado->fetch_object();
+    }
+
+    return null;
+}
+    
     
 }
