@@ -16,18 +16,23 @@
 <body>
 <?php require_once __DIR__ . "/../layouts/header.php" ?>
 
-    <div class="compra">
-        <div class="img-compra">
-            <img src="<?= htmlspecialchars($guitarra['url_imagem']) ?>" alt="">
-        </div>
-        <div class="sobre-compra">
-            <h1><?= htmlspecialchars($guitarra['modelo']) ?></h1>
-            <h2>Marca: <?= htmlspecialchars($guitarra['marca']) ?></h2>
-            <h2>Preço: R$ <?= htmlspecialchars($guitarra['preco']) ?></h2>
-            <h2>Descrição: <?= htmlspecialchars($guitarra['descricao']) ?></h2>
-            <h2>Categoria: <?= htmlspecialchars($guitarra['categoria']) ?></h2>
-            <button>Finalizar compra</button>
-        </div>
+<div class="compra">
+    <div class="img-compra">
+        <img src="<?= htmlspecialchars($guitarra['url_imagem']) ?>" alt="">
     </div>
+    <div class="sobre-compra">
+        <h1><?= htmlspecialchars($guitarra['modelo']) ?></h1>
+        <h2>Marca: <?= htmlspecialchars($guitarra['marca']) ?></h2>
+        <h2>Preço: R$ <?= htmlspecialchars($guitarra['preco']) ?></h2>
+        <h2>Descrição: <?= htmlspecialchars($guitarra['descricao']) ?></h2>
+        <h2>Categoria: <?= htmlspecialchars($guitarra['categoria']) ?></h2>
+
+        <form method="POST" action="/pentatonicaa/PROJETO/pentatonicaa/public/pagar">
+            <input type="hidden" name="titulo" value="<?= htmlspecialchars($guitarra['modelo']) ?>">
+            <input type="hidden" name="preco" value="<?= htmlspecialchars($guitarra['preco']) ?>">
+            <button type="submit" class="btn btn-primary">Comprar Agora</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>

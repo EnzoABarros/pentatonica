@@ -1,6 +1,6 @@
 <?php 
 
-class carrinho {
+class Carrinho {
     private $db;
 
     public function __construct() {
