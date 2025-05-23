@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__ . '/../../models/Cliente.php';
 
-$clienteId = 1; 
+$clienteId = $_SESSION['usuario']['id']; 
 $clienteObj = new Cliente();
 $cliente = $clienteObj->buscarPorId($clienteId);
 ?>
@@ -19,9 +19,9 @@ $cliente = $clienteObj->buscarPorId($clienteId);
 <body class="bg-light">
 <?php require_once __DIR__ . "/../layouts/header.php" ?>
 
-    <div class="container mt-5 p-4 bg-white shadow rounded">
+    <div class="container mt-5 p-4 bg-white shadow rounded" style="margin-top: 5rem; margin-left: 1rem;">
 
-        <h2 class="mb-4">Área do Cliente</h2>
+        <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/areadocliente.png" alt="">
 
         <?php if ($cliente): ?>
             <div class="mb-3">

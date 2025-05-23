@@ -7,6 +7,7 @@ $eh_inicio   = $url_atual === '/pentatonicaa/PROJETO/pentatonicaa/public/' || $u
 $eh_guitarra = strpos($url_atual, '/pentatonicaa/PROJETO/pentatonicaa/public/guitarras') !== false;
 $eh_leilao   = strpos($url_atual, '/pentatonicaa/PROJETO/pentatonicaa/public/leiloes') !== false;
 $eh_carrinho = strpos($url_atual, '/pentatonicaa/PROJETO/pentatonicaa/public/carrinho') !== false;
+$eh_areacliente = strpos($url_atual, '/pentatonicaa/PROJETO/pentatonicaa/public/area-cliente') !== false;
 ?>
 
 <nav class="<?= isset($_SESSION['usuario']['tipo']) && $_SESSION['usuario']['tipo'] === 'adm' ? 'adm-header' : 'header' ?>" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;">
@@ -46,6 +47,10 @@ $eh_carrinho = strpos($url_atual, '/pentatonicaa/PROJETO/pentatonicaa/public/car
         <?php else: ?>
             <?php if (!$eh_carrinho): ?>
                 <a id="btn-carrinho" href="/pentatonicaa/PROJETO/pentatonicaa/public/carrinho"><button>Carrinho</button></a>
+            <?php endif; ?>
+
+            <?php if (!$eh_areacliente): ?>
+                <a id="btn-carrinho" href="/pentatonicaa/PROJETO/pentatonicaa/public/area-cliente"><button>Área do Cliente</button></a>
             <?php endif; ?>
 
             <?php if ($_SESSION['usuario']['tipo'] === 'adm'): ?>
