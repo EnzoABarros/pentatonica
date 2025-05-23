@@ -8,6 +8,7 @@ require_once __DIR__ . '/../app/controllers/LoginController.php';
 require_once __DIR__ . '/../app/controllers/CarrinhoController.php';
 require_once __DIR__ . '/../app/controllers/GuiasController.php';
 require_once __DIR__ . '/../app/controllers/CompraController.php';
+require_once __DIR__ . '/../app/controllers/AreaClienteController.php';
 
 
 
@@ -43,6 +44,7 @@ $router->addRoute('/retorno', 'CompraController@retorno');
 $router->addRoute('/notificacao', 'CompraController@webhook');
 $router->addRoute('/aguardando', 'CompraController@aguardando');
 $router->addRoute('/erro', 'CompraController@erro');
+$router->addRoute('/area-cliente', 'AreaClienteController@areaCliente');
 
 
 
