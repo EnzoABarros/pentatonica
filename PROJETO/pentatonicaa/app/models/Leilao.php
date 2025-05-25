@@ -109,9 +109,65 @@ class Leilao {
         $stmt_lance = $this->db->prepare($sql_lance);
         $stmt_lance->bind_param("iis", $id_usuario, $id_guitarra, $valor_lance);
 
-        return $stmt_lance->execute();
+        if (!$stmt_lance->execute()) {
+            return false;
+        }
+
+        $sqlUsuarios = "SELECT DISTINCT u.email
+                        FROM tb_lances l
+                        JOIN tb_usuarios u ON l.id_usuario = u.id
+                        WHERE l.id_guitarra = ? AND u.id != ?";
+        
+        $stmtUsuarios = $this->db->prepare($sqlUsuarios);
+        $stmtUsuarios->bind_param("ii", $id_guitarra, $id_usuario);
+        $stmtUsuarios->execute();
+        $result = $stmtUsuarios->get_result();
+
+        $emails = [];
+        while ($row = $result->fetch_assoc()) {
+            $emails[] = $row['email'];
+        }
+
+        foreach ($emails as $email) {
+            $this->enviarEmailNovoLance($email, $id_guitarra);
+        }
+
+        return true;
     }
 
+    private function enviarEmailNovoLance($destinatario, $id_guitarra) {
+        require_once __DIR__ . '/../../../../vendor/autoload.php';
+        $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'vsoaressilva06@gmail.com';
+            $mail->Password = 'gfre dpgj hplh mppc';
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            $mail->setFrom('vsoaressilva06@gmail.com', 'Pentatonica');
+            $mail->addAddress($destinatario);
+
+            $mail->isHTML(true);
+            $mail->CharSet = 'UTF-8';
+            $mail->Subject = "Novo lance no leilão que você participou!";
+            $mail->Body    = "
+                Olá!<br><br>
+                Um novo lance foi feito no leilão da guitarra que você demonstrou interesse.<br><br>
+                Acesse <a href='https://b442-2804-34c0-6ed7-1301-a865-e358-fe7f-976a.ngrok-free.app/pentatonicaa/PROJETO/pentatonicaa/public/leiloes'>aqui</a> para ver os detalhes e fazer sua oferta!<br><br>
+                Continue de olho para não perder a chance de vencer!<br><br>
+                Obrigado!
+            ";
+
+            $mail->send();
+            echo "[✔] E-mail de novo lance enviado para $destinatario\n";
+        } catch (\PHPMailer\PHPMailer\Exception $e) {
+            echo "[✖] Falha ao enviar e-mail para $destinatario: {$mail->ErrorInfo}\n";
+        }
+    }
 
     public function buscarTop3Lances($id_guitarra) {
         $sql = "SELECT u.nome, l.valor_lance
