@@ -40,15 +40,17 @@ $leiloesAtivos = $leiloesAtivos ?? [];
                 <label for="email" class="form-label">Novo Email:</label>
                 <input type="email" class="form-control" id="email" name="email" required value="<?= htmlspecialchars($_SESSION['usuario']['email']) ?>">
             </div>
+            <br>
             <button type="submit" class="btn btn-primary">Atualizar Email</button>
         </form>
 
         <h4 class="mt-4">Alterar Endereço</h4>
         <form action="/areaCliente/atualizarEmail" method="post">
             <div class="mb-3">
-                <label for="email" class="form-label">Novo Endereço:</label>
-                <input type="email" class="form-control" id="email" name="email" required value="<?= htmlspecialchars($_SESSION['usuario']['endereco']) ?>">
+                <label for="endereco" class="form-label">Novo Endereço:</label>
+                <input type="endereco" class="form-control" id="endereco" name="endereco" required value="<?= htmlspecialchars($_SESSION['usuario']['endereco']) ?>">
             </div>
+            <br>
             <button type="submit" class="btn btn-primary">Atualizar Endereço</button>
         </form>
 
@@ -86,7 +88,7 @@ $leiloesAtivos = $leiloesAtivos ?? [];
             <p>Você não está participando de nenhum leilão ativo.</p>
         <?php endif; ?>
 
-
+        <?php endif; ?>
 </div>
 </body>
 </html>
