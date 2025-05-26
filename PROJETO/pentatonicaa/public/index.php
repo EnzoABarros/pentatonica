@@ -45,6 +45,7 @@ $router->addRoute('/notificacao', 'CompraController@webhook');
 $router->addRoute('/aguardando', 'CompraController@aguardando');
 $router->addRoute('/erro', 'CompraController@erro');
 $router->addRoute('/area-cliente', 'AreaClienteController@areaCliente');
+$router->addRoute('/historico', 'HistoricoController@index');
 
 
 
