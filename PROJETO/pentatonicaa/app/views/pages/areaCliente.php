@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../models/Cliente.php';
 
 session_start();
 
-$cliente = $cliente ?? null;          
+$cliente = $_SESSION['usuario']['id'] ?? null;          
 $historico = $historico ?? [];        
 $leiloesAtivos = $leiloesAtivos ?? [];
 ?>
@@ -27,9 +27,9 @@ $leiloesAtivos = $leiloesAtivos ?? [];
 
     <?php if ($cliente): ?>
         <div class="mb-3">
-            <p><strong>Nome:</strong> <?= htmlspecialchars($cliente->nome) ?></p>
-            <p><strong>Email:</strong> <?= htmlspecialchars($cliente->email) ?></p>
-            <p><strong>Endereço:</strong> <?= htmlspecialchars($cliente->endereco ?? 'Não informado') ?></p>
+            <p><strong>Nome:</strong> <?= htmlspecialchars($_SESSION['usuario']['nome']) ?></p>
+            <p><strong>Email:</strong> <?= htmlspecialchars($_SESSION['usuario']['email']) ?></p>
+            <p><strong>Endereço:</strong> <?= htmlspecialchars($cliente->$_SESSION['usuario']['endereco'] ?? 'Não informado') ?></p>
         </div>
 
         <hr>
@@ -38,9 +38,18 @@ $leiloesAtivos = $leiloesAtivos ?? [];
         <form action="/areaCliente/atualizarEmail" method="post">
             <div class="mb-3">
                 <label for="email" class="form-label">Novo Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required value="<?= htmlspecialchars($cliente->email) ?>">
+                <input type="email" class="form-control" id="email" name="email" required value="<?= htmlspecialchars($_SESSION['usuario']['email']) ?>">
             </div>
             <button type="submit" class="btn btn-primary">Atualizar Email</button>
+        </form>
+
+        <h4 class="mt-4">Alterar Endereço</h4>
+        <form action="/areaCliente/atualizarEmail" method="post">
+            <div class="mb-3">
+                <label for="email" class="form-label">Novo Endereço:</label>
+                <input type="email" class="form-control" id="email" name="email" required value="<?= htmlspecialchars($_SESSION['usuario']['endereco']) ?>">
+            </div>
+            <button type="submit" class="btn btn-primary">Atualizar Endereço</button>
         </form>
 
         <hr>
@@ -80,11 +89,6 @@ $leiloesAtivos = $leiloesAtivos ?? [];
     <?php else: ?>
         <div class="alert alert-danger">Cliente não encontrado.</div>
     <?php endif; ?>
-
-    <div class="mt-4">
-        <a href="/pentatonicaa/public/index.php" class="btn btn-secondary">Voltar à Home</a>
-        <a href="/pentatonicaa/public/logout.php" class="btn btn-danger">Sair</a>
-    </div>
 
 </div>
 </body>
