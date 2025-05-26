@@ -11,6 +11,8 @@
 
     <?php require_once __DIR__ . "/../layouts/header.php" ?><br><br><br><br><br><br><br>
 
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/cadastrarguit.png" alt="Cadastrar Guitarra">
+
     <h2>Cadastrar Guitarra</h2>
 
     <form action="/pentatonicaa/PROJETO/pentatonicaa/public/cadastrar-guitarra" method="POST" enctype="multipart/form-data">
