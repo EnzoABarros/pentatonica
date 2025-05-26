@@ -47,6 +47,7 @@ $router->addRoute('/erro', 'CompraController@erro');
 $router->addRoute('/area-cliente', 'AreaClienteController@areaCliente');
 $router->addRoute('/alterar-endereco', 'AreaClienteController@atualizarEndereco');
 $router->addRoute('/alterar-email', 'AreaClienteController@atualizarEmail');
+$router->addRoute('/historico', 'HistoricoController@index');
 
 
 
