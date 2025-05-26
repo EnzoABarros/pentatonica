@@ -67,15 +67,14 @@ class CompraController
 
     public function retorno()
     {
-        session_start();
+        $dados = $_GET;
 
-        if (!isset($_GET['payment_id'])) {
-            echo "<script>alert('Não foi possível identificar o pagamento. Por favor, tente novamente.');</script>";
-            header("Location: {$this->urlBase}/guitarras");
-            exit;
+        if (!isset($dados['collection_id'])) {
+            echo "[✖] ID de pagamento não fornecido.\n";
+            return;
         }
 
-        $idPagamento = $_GET['payment_id'];
+        $idPagamento = $dados['collection_id'];
 
         $ch = curl_init("https://api.mercadopago.com/v1/payments/$idPagamento");
         curl_setopt_array($ch, [
@@ -89,34 +88,29 @@ class CompraController
 
         $pagamento = json_decode($resposta, true);
 
-        if (isset($pagamento['status']) && $pagamento['status'] === 'approved') {
-            $titulo = $pagamento['additional_info']['items'][0]['title'] ?? 'Produto';
-            $preco = $pagamento['transaction_amount'];
-            $email = $pagamento['metadata']['email'] ?? '';
-            $idUsuario = $pagamento['metadata']['id_usuario'] ?? null;
-            $dataPagamento = date('Y-m-d H:i:s');
-
-            $pagamentoModel = new Pagamento();
-            $salvo = $pagamentoModel->salvarPagamentoAprovado($idPagamento, $titulo, $preco, $email, $idUsuario, $dataPagamento);
-
-            if ($salvo) {
-                echo "<script>alert('Pagamento aprovado com sucesso! Obrigado pela sua compra.');</script>";
-                echo "Pagamento aprovado e registrado com sucesso.";
-                header("Location: {$this->urlBase}/guitarras");            
-                exit;
-
-            } else {
-                echo "<script>alert('Este pagamento já foi registrado anteriormente.');</script>";
-                header("Location: {$this->urlBase}/guitarras");
-                exit;
-            }
-        } else {
-            echo "<script>alert('O pagamento não foi aprovado. Por favor, verifique e tente novamente.');</script>";
-            header("Location: {$this->urlBase}/guitarras");
-            exit;
-
-            
+        if (!$pagamento || $pagamento['status'] !== 'approved') {
+            echo "[✖] Pagamento não aprovado.\n";
+            return;
         }
+
+        $titulo = $pagamento['additional_info']['items'][0]['title'] ?? 'Produto';
+        $preco = $pagamento['transaction_amount'];
+        $email = $pagamento['payer']['email'];
+        $dataPagamento = $pagamento['date_approved'] ?? date('Y-m-d H:i:s');
+        $idUsuario = $pagamento['metadata']['id_usuario'] ?? null;
+
+        $tipoPagamento = (str_contains($titulo, 'Leilão')) ? 'leilao' : 'compra';
+
+        $pagamentoModel = new Pagamento();
+        $pagamentoModel->salvarPagamentoAprovado(
+            $idPagamento,
+            $titulo,
+            $preco,
+            $email,
+            $idUsuario,
+            $dataPagamento,
+            $tipoPagamento
+        );
     }
 
     public function webhook()
@@ -134,10 +128,6 @@ class CompraController
             echo "Requisição inválida.";
             return;
         }
-
-        ob_start();
-        print_r($notificacao);
-        file_put_contents($logPath, ob_get_clean() . "\n", FILE_APPEND);
 
         $paymentId = $notificacao['data']['id'] ?? ($notificacao['resource'] ?? null);
 
@@ -171,10 +161,20 @@ class CompraController
             $preco = $pagamento['transaction_amount'];
             $email = $pagamento['metadata']['email'] ?? '';
             $idUsuario = $pagamento['metadata']['id_usuario'] ?? null;
-            $dataPagamento = date('Y-m-d H:i:s');
+            $dataPagamento = $pagamento['date_approved'] ?? date('Y-m-d H:i:s');
+
+            $tipoPagamento = (str_contains($titulo, 'Leilão')) ? 'leilao' : 'compra';
 
             $pagamentoModel = new Pagamento();
-            $pagamentoModel->salvarPagamentoAprovado($paymentId, $titulo, $preco, $email, $idUsuario, $dataPagamento);
+            $pagamentoModel->salvarPagamentoAprovado(
+                $paymentId,
+                $titulo,
+                $preco,
+                $email,
+                $idUsuario,
+                $dataPagamento,
+                $tipoPagamento
+            );
 
             file_put_contents($logPath, "Pagamento via webhook registrado: $paymentId\n", FILE_APPEND);
             echo "Pagamento registrado com sucesso.";
@@ -186,11 +186,13 @@ class CompraController
         http_response_code(200);
     }
 
-    public function erro() {
+    public function erro()
+    {
         echo "Ocorreu um problema na finalização do pagamento. Por favor, tente novamente.";
     }
 
-    public function aguardando() {
+    public function aguardando()
+    {
         echo "Seu pagamento está sendo processado. Por favor, aguarde a confirmação.";
     }
 }

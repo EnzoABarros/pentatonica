@@ -8,9 +8,7 @@
     <link rel="icon" href="/pentatonicaa/PROJETO/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
 <body>
-<?php require_once __DIR__ . "/../layouts/header.php" ?><br><br><br><br><br> 
-
-<img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/leiloes.png" alt="Leilões">
+<?php require_once __DIR__ . "/../layouts/header.php" ?>
 
 <div class="catalogo" style="margin-top: 160px;">
     <div class="filtro botoes-links">
