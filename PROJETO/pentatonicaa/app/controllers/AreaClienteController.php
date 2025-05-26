@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/../models/Cliente.php';
+
 class AreaClienteController
 {
     public function areaCliente()
@@ -9,17 +12,37 @@ class AreaClienteController
     public function atualizarEmail()
     {
         session_start();
-        $idCliente = $_SESSION['usuario'];
+        $idCliente = $_SESSION['usuario']['id'];
 
         $novoEmail = $_POST['email'];
 
-        $clienteModel = $this->loadModel('Cliente');
-        $cliente = $clienteModel->findById($idCliente);
+        $clienteModel = new Cliente();
+        $cliente = $clienteModel->buscarPorId($idCliente);
 
         if ($cliente) {
             $cliente->email = $novoEmail;
-            $cliente->save();
-            header('Location: /areaCliente');
+            $clienteModel->salvarEmail($novoEmail, $idCliente);
+            $_SESSION['usuario']['email'] = $novoEmail;
+            header('Location: /pentatonicaa/PROJETO/pentatonicaa/public/area-cliente');
+            exit();
+        }
+    }
+
+    public function atualizarEndereco()
+    {
+        session_start();
+        $idCliente = $_SESSION['usuario']['id'];
+
+        $novoEndereco = $_POST['endereco'];
+
+        $clienteModel = new Cliente();
+        $cliente = $clienteModel->buscarPorId($idCliente);
+
+        if ($cliente) {
+            $cliente->email = $novoEndereco;
+            $clienteModel->salvarEndereco($novoEndereco, $idCliente);
+            $_SESSION['usuario']['endereco'] = $novoEndereco;
+            header('Location: /pentatonicaa/PROJETO/pentatonicaa/public/area-cliente');
             exit();
         }
     }
@@ -44,4 +67,5 @@ class AreaClienteController
             'leiloesAtivos' => $leiloesAtivos
         ]);
     }
+
 }

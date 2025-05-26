@@ -21,31 +21,31 @@ $leiloesAtivos = $leiloesAtivos ?? [];
 <body class="bg-light">
 <?php require_once __DIR__ . "/../layouts/header.php"; ?>
 
-<div class="container mt-5 p-4 bg-white shadow rounded" style="margin-top: 5rem; margin-left: 1rem;">
+<div class="container mt-5 p-4 bg-white shadow rounded" style="margin-top: 4.2rem; margin-left: 1rem;">
 
     <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/areadocliente.png" alt="Área do Cliente">
 
     <?php if ($cliente): ?>
         <div class="mb-3">
-            <p><strong>Nome:</strong> <?= htmlspecialchars($_SESSION['usuario']['nome']) ?></p>
-            <p><strong>Email:</strong> <?= htmlspecialchars($_SESSION['usuario']['email']) ?></p>
-            <p><strong>Endereço:</strong> <?= htmlspecialchars($cliente->$_SESSION['usuario']['endereco'] ?? 'Não informado') ?></p>
+            <p style="font-size: 17px;"><strong style="font-size: 20px;">Nome:</strong> <?= htmlspecialchars($_SESSION['usuario']['nome']) ?></p> <br>
+            <p style="font-size: 17px;"><strong style="font-size: 20px;">Email:</strong> <?= htmlspecialchars($_SESSION['usuario']['email']) ?></p> <br>
+            <p style="font-size: 17px;"><strong style="font-size: 20px;">Endereço:</strong> <?= htmlspecialchars($cliente->$_SESSION['usuario']['endereco'] ?? 'Não informado') ?></pp <br>
         </div>
-
+        <br>
         <hr>
-
-        <h4 class="mt-4">Alterar Email</h4>
-        <form action="/areaCliente/atualizarEmail" method="post">
+        <br>
+        <h4 class="mt-4" style="font-size: 25px;">Alterar Email</h4>
+        <form action="/pentatonicaa/PROJETO/pentatonicaa/public/alterar-email" method="post">
             <div class="mb-3">
-                <label for="email" class="form-label">Novo Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required value="<?= htmlspecialchars($_SESSION['usuario']['email']) ?>">
+                <label for="email" class="form-label" style="font-size: 20px;">Novo Email:</label> <br> <br>
+                <input type="email" class="form-control" id="email" name="email" required class="email-field">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Atualizar Email</button>
         </form>
 
         <h4 class="mt-4">Alterar Endereço</h4>
-        <form action="/areaCliente/atualizarEmail" method="post">
+        <form action="/pentatonicaa/PROJETO/pentatonicaa/public/alterar-endereco" method="post">
             <div class="mb-3">
                 <label for="endereco" class="form-label">Novo Endereço:</label>
                 <input type="endereco" class="form-control" id="endereco" name="endereco" required value="<?= htmlspecialchars($_SESSION['usuario']['endereco']) ?>">
