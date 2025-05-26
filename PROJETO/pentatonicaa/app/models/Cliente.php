@@ -59,23 +59,24 @@ class Cliente {
     }
 
     public function login($email, $senha, $tipo) {
-        $sql = "SELECT id, nome, email, senha FROM tb_usuarios WHERE email = ? AND tipo = ?";
+        $sql = "SELECT id, nome, email, senha, endereco FROM tb_usuarios WHERE email = ? AND tipo = ?";
         $stmt = $this->db->prepare($sql);
         $stmt->bind_param("ss", $email, $tipo);
         $stmt->execute();
         $stmt->store_result();
     
         if ($stmt->num_rows > 0) {
-            $stmt->bind_result($id, $nome, $email, $senhaHash);
+            $stmt->bind_result($id, $nome, $email, $senhaHash, $endereco);
             $stmt->fetch();
     
             if (password_verify($senha, $senhaHash)) {
-                return ['id' => $id, 'nome' => $nome, 'email' => $email, 'tipo' => $tipo];
+                return ['id' => $id, 'nome' => $nome, 'email' => $email, 'tipo' => $tipo, 'endereco' => $endereco];
             }
         }
     
         return false;
     }
+
     public function buscarPorId($id) {
     $sql = "SELECT id, nome, email, endereco FROM tb_usuarios WHERE id = ?";
     $stmt = $this->db->prepare($sql);
@@ -89,6 +90,22 @@ class Cliente {
 
     return null;
 }
+
+        public function salvarEmail($novoEmail, $idCliente) {
+            $sql = "UPDATE tb_usuarios SET email = ? WHERE id = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bind_param("si", $novoEmail, $idCliente);
+            $stmt->execute();
+            
+        }
+
+        public function salvarEndereco($novoEndereco, $idCliente) {
+            $sql = "UPDATE tb_usuarios SET endereco = ? WHERE id = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bind_param("si", $novoEndereco, $idCliente);
+            $stmt->execute();
+            
+        }
     
     
 }

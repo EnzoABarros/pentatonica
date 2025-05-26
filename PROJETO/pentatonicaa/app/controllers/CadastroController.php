@@ -26,14 +26,10 @@ class CadastroController {
     
             $cliente = new Cliente();
             $resultado = $cliente->cadastrar($nome, $email, $cpf, $senha);
+            $usuario = $cliente->login($email, $senha, 'cliente');
     
             if ($resultado === true) {
-                $_SESSION['usuario'] = [
-                    'nome' => $nome,
-                    'email' => $email,
-                    'cpf' => $cpf,
-                    'tipo' => 'cliente'
-                ];
+                $_SESSION['usuario'] = $usuario;
     
                 header("Location: /pentatonicaa/PROJETO/pentatonicaa/public/");
                 exit;
