@@ -77,9 +77,6 @@ $leiloesAtivos = $leiloesAtivos ?? [];
             <p>Você não está participando de nenhum leilão ativo.</p>
         <?php endif; ?>
 
-    <?php else: ?>
-        <div class="alert alert-danger">Cliente não encontrado.</div>
-    <?php endif; ?>
 
     <div class="mt-4">
         <a href="/pentatonicaa/public/index.php" class="btn btn-secondary">Voltar à Home</a>
