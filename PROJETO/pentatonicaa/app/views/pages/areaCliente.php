@@ -86,9 +86,6 @@ $leiloesAtivos = $leiloesAtivos ?? [];
             <p>Você não está participando de nenhum leilão ativo.</p>
         <?php endif; ?>
 
-    <?php else: ?>
-        <div class="alert alert-danger">Cliente não encontrado.</div>
-    <?php endif; ?>
 
 </div>
 </body>
