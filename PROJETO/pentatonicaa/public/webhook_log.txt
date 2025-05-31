@@ -1,0 +1,295 @@
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-19T10:19:12.179-04:00","id":"31116863895","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.updated","api_version":"v1","data":{"id":"123456"},"date_created":"2021-11-01T02:02:02Z","id":"123456","live_mode":false,"type":"payment","user_id":2447049530}
+Pagamento via webhook não aprovado.
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31400574178","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T11:58:04.427-04:00","id":"31400574178","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.created","api_version":"v1","data":{"id":"113434500920"},"date_created":"2025-05-31T15:58:04Z","id":121713203945,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"113434500920","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31400574178","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T11:58:04.427-04:00","id":"31400574178","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T11:58:04.427-04:00","id":"31400574178","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+Pagamento via webhook não aprovado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T11:58:04.427-04:00","id":"31400574178","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+Pagamento via webhook não aprovado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.updated","api_version":"v1","data":{"id":"113434500920"},"date_created":"2025-05-31T15:58:04Z","id":121713343259,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"113434500920","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31400574178","topic":"merchant_order"}
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T11:58:04.427-04:00","id":"31400574178","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+Pedido do comerciante recebido. Ignorado.
+Pagamento via webhook registrado: 113434500920
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T11:58:04.427-04:00","id":"31400574178","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31401066926","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.created","api_version":"v1","data":{"id":"112965874573"},"date_created":"2025-05-31T16:15:51Z","id":121713689339,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"112965874573","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31401066926","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+Pagamento via webhook não aprovado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T11:58:04.427-04:00","id":"31400574178","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"112965874573","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.updated","api_version":"v1","data":{"id":"112965874573"},"date_created":"2025-05-31T16:15:51Z","id":121786442190,"live_mode":true,"type":"payment","user_id":"2447049530"}
+Pagamento via webhook registrado: 112965874573
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31401066926","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31401354532","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.created","api_version":"v1","data":{"id":"112967278231"},"date_created":"2025-05-31T16:26:35Z","id":121786563874,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"112967278231","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T12:26:34.916-04:00","id":"31401354532","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31401354532","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T12:26:34.916-04:00","id":"31401354532","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:26:34.916-04:00","id":"31401354532","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+Pagamento via webhook não aprovado.
+Pagamento via webhook não aprovado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:26:34.916-04:00","id":"31401354532","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+
+==== NOVA REQUISIÇÃO ====
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.updated","api_version":"v1","data":{"id":"112967278231"},"date_created":"2025-05-31T16:26:35Z","id":121786710370,"live_mode":true,"type":"payment","user_id":"2447049530"}
+{"resource":"112967278231","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31401354532","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:26:34.916-04:00","id":"31401354532","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+Pagamento via webhook registrado: 112967278231
+Pagamento via webhook registrado: 112967278231
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:26:34.916-04:00","id":"31401354532","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380401167","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T12:46:56.101-04:00","id":"31380401167","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.created","api_version":"v1","data":{"id":"112969497023"},"date_created":"2025-05-31T16:46:56Z","id":121714456371,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"112969497023","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380401167","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T12:46:56.101-04:00","id":"31380401167","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+Pagamento via webhook não aprovado.
+Pagamento via webhook não aprovado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:46:56.101-04:00","id":"31380401167","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:46:56.101-04:00","id":"31380401167","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:26:34.916-04:00","id":"31401354532","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.updated","api_version":"v1","data":{"id":"112969497023"},"date_created":"2025-05-31T16:46:56Z","id":121714459571,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380401167","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:46:56.101-04:00","id":"31380401167","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:46:56.101-04:00","id":"31380401167","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+Pagamento via webhook registrado: 112969497023
+Pagamento via webhook registrado: 112969497023
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T11:58:04.427-04:00","id":"31400574178","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380548105","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T12:52:58.577-04:00","id":"31380548105","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"113440968414","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.created","api_version":"v1","data":{"id":"113440968414"},"date_created":"2025-05-31T16:52:58Z","id":121714598671,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380548105","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T12:52:58.577-04:00","id":"31380548105","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:52:58.577-04:00","id":"31380548105","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+Pagamento via webhook não aprovado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:52:58.577-04:00","id":"31380548105","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+
+==== NOVA REQUISIÇÃO ====
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.updated","api_version":"v1","data":{"id":"113440968414"},"date_created":"2025-05-31T16:52:58Z","id":121787282764,"live_mode":true,"type":"payment","user_id":"2447049530"}
+{"resource":"113440968414","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380548105","topic":"merchant_order"}
+
+==== NOVA REQUISIÇÃO ====
+Pedido do comerciante recebido. Ignorado.
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:52:58.577-04:00","id":"31380548105","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:52:58.577-04:00","id":"31380548105","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+Pagamento de carrinho salvo: 113440968414
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380860807","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"112971584687","topic":"payment"}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.created","api_version":"v1","data":{"id":"112971584687"},"date_created":"2025-05-31T17:06:08Z","id":121714829655,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380860807","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T13:06:07.979-04:00","id":"31380860807","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"create","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"opened"},"date_created":"2025-05-31T13:06:07.979-04:00","id":"31380860807","live_mode":true,"status":"opened","type":"topic_merchant_order_wh","user_id":2447049530,"version":0}
+Pagamento via webhook não aprovado.
+Pagamento via webhook não aprovado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:46:56.101-04:00","id":"31380401167","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T13:06:07.979-04:00","id":"31380860807","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T13:06:07.979-04:00","id":"31380860807","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":1}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"payment.updated","api_version":"v1","data":{"id":"112971584687"},"date_created":"2025-05-31T17:06:08Z","id":121787591392,"live_mode":true,"type":"payment","user_id":"2447049530"}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"112971584687","topic":"payment"}
+Pagamento de carrinho salvo: 112971584687
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T13:06:07.979-04:00","id":"31380860807","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"resource":"https://api.mercadolibre.com/merchant_orders/31380860807","topic":"merchant_order"}
+Pedido do comerciante recebido. Ignorado.
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T13:06:07.979-04:00","id":"31380860807","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:52:58.577-04:00","id":"31380548105","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}

@@ -11,23 +11,48 @@ class CompraController
     {
         session_start();
 
-        if (!isset($_POST['titulo'], $_POST['preco'])) {
-            echo "<script>alert('Por favor, preencha todos os dados necessários para a compra.');</script>";
+        if (!isset($_POST['itens']) || empty($_POST['itens'])) {
+            echo "<script>alert('Carrinho vazio ou dados inválidos.');</script>";
             echo '<script>history.go(-1);</script>';
             exit;
         }
 
-        $titulo = htmlspecialchars($_POST['titulo']);
-        $preco = (float) $_POST['preco'];
+        $itens = $_POST['itens'];
         $idUsuario = $_SESSION['usuario']['id'] ?? null;
         $emailUsuario = $_SESSION['usuario']['email'] ?? null;
 
-        $dados = [
-            "items" => [[
-                "title" => $titulo,
-                "quantity" => 1,
+        $itensMP = [];
+        $itensParaBanco = [];
+        $total = 0;
+
+        foreach ($itens as $item) {
+            $idGuitarra = (int)$item['id_guitarra'];
+            $modelo = htmlspecialchars($item['modelo']);
+            $marca = htmlspecialchars($item['marca']);
+            $quantidade = (int)$item['quantidade'];
+            $preco = (float)$item['preco'];
+            $totalItem = $quantidade * $preco;
+
+            $itensMP[] = [
+                "title" => "$modelo ($marca)",
+                "quantity" => $quantidade,
                 "unit_price" => $preco
-            ]],
+            ];
+
+            $itensParaBanco[] = [
+                'id_guitarra' => $idGuitarra,
+                'modelo' => $modelo,
+                'marca' => $marca,
+                'quantidade' => $quantidade,
+                'preco_unitario' => $preco,
+                'total_item' => $totalItem
+            ];
+
+            $total += $totalItem;
+        }
+
+        $dados = [
+            "items" => $itensMP,
             "back_urls" => [
                 "success" => "{$this->urlBase}/retorno",
                 "failure" => "{$this->urlBase}/erro",
@@ -37,7 +62,9 @@ class CompraController
             "notification_url" => "{$this->urlBase}/notificacao",
             "metadata" => [
                 "id_usuario" => $idUsuario,
-                "email" => $emailUsuario
+                "email" => $emailUsuario,
+                "carrinho" => json_encode($itensParaBanco),
+                "tipo" => "carrinho"
             ]
         ];
 
@@ -59,7 +86,7 @@ class CompraController
             header("Location: " . $resposta['init_point']);
             exit;
         } else {
-            echo "Não foi possível gerar o link de pagamento no momento. Por favor, tente novamente mais tarde.";
+            echo "Erro ao gerar link de pagamento.";
             header("Location: {$this->urlBase}/guitarras");
             exit;
         }
@@ -67,50 +94,7 @@ class CompraController
 
     public function retorno()
     {
-        $dados = $_GET;
-
-        if (!isset($dados['collection_id'])) {
-            echo "[✖] ID de pagamento não fornecido.\n";
-            return;
-        }
-
-        $idPagamento = $dados['collection_id'];
-
-        $ch = curl_init("https://api.mercadopago.com/v1/payments/$idPagamento");
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER => [
-                "Authorization: Bearer {$this->accessToken}"
-            ]
-        ]);
-        $resposta = curl_exec($ch);
-        curl_close($ch);
-
-        $pagamento = json_decode($resposta, true);
-
-        if (!$pagamento || $pagamento['status'] !== 'approved') {
-            echo "[✖] Pagamento não aprovado.\n";
-            return;
-        }
-
-        $titulo = $pagamento['additional_info']['items'][0]['title'] ?? 'Produto';
-        $preco = $pagamento['transaction_amount'];
-        $email = $pagamento['payer']['email'];
-        $dataPagamento = $pagamento['date_approved'] ?? date('Y-m-d H:i:s');
-        $idUsuario = $pagamento['metadata']['id_usuario'] ?? null;
-
-        $tipoPagamento = (str_contains($titulo, 'Leilão')) ? 'leilao' : 'compra';
-
-        $pagamentoModel = new Pagamento();
-        $pagamentoModel->salvarPagamentoAprovado(
-            $idPagamento,
-            $titulo,
-            $preco,
-            $email,
-            $idUsuario,
-            $dataPagamento,
-            $tipoPagamento
-        );
+        echo "Pagamento processado. Aguarde a confirmação via e-mail.";
     }
 
     public function webhook()
@@ -162,21 +146,44 @@ class CompraController
             $email = $pagamento['metadata']['email'] ?? '';
             $idUsuario = $pagamento['metadata']['id_usuario'] ?? null;
             $dataPagamento = $pagamento['date_approved'] ?? date('Y-m-d H:i:s');
-
-            $tipoPagamento = (str_contains($titulo, 'Leilão')) ? 'leilao' : 'compra';
+            $tipo = $pagamento['metadata']['tipo'] ?? null;
 
             $pagamentoModel = new Pagamento();
-            $pagamentoModel->salvarPagamentoAprovado(
-                $paymentId,
-                $titulo,
-                $preco,
-                $email,
-                $idUsuario,
-                $dataPagamento,
-                $tipoPagamento
-            );
 
-            file_put_contents($logPath, "Pagamento via webhook registrado: $paymentId\n", FILE_APPEND);
+            if ($tipo === 'carrinho') {
+                $carrinho = json_decode($pagamento['metadata']['carrinho'], true);
+
+                $pagamentoModel->salvarPagamentoAprovado(
+                    $paymentId,
+                    "Carrinho",
+                    $preco,
+                    $email,
+                    $idUsuario,
+                    $dataPagamento,
+                    "carrinho"
+                );
+
+                if (!empty($carrinho)) {
+                    $pagamentoModel->salvarItensCarrinho($paymentId, $carrinho);
+                }
+
+                file_put_contents($logPath, "Pagamento de carrinho salvo: $paymentId\n", FILE_APPEND);
+            } else {
+                $tipoPagamento = (str_contains($titulo, 'Leilão')) ? 'leilao' : 'compra';
+
+                $pagamentoModel->salvarPagamentoAprovado(
+                    $paymentId,
+                    $titulo,
+                    $preco,
+                    $email,
+                    $idUsuario,
+                    $dataPagamento,
+                    $tipoPagamento
+                );
+
+                file_put_contents($logPath, "Pagamento simples salvo: $paymentId\n", FILE_APPEND);
+            }
+
             echo "Pagamento registrado com sucesso.";
         } else {
             file_put_contents($logPath, "Pagamento via webhook não aprovado.\n", FILE_APPEND);

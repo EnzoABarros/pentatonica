@@ -36,4 +36,44 @@ class Pagamento {
             echo "[✖] Erro ao salvar pagamento: " . $stmt->error . "\n";
         }
     }
+
+        public function salvarItensCarrinho($idPagamento, $itens)
+    {
+        $sql = "INSERT INTO tb_pagamento_carrinho 
+                (id_pagamento, id_guitarra, modelo, marca, preco_unitario, quantidade, total_item)
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        foreach ($itens as $item) {
+            $stmt = $this->db->prepare($sql);
+
+            $idGuitarra = (int)$item['id_guitarra'];
+            $modelo = $item['modelo'];
+            $marca = $item['marca'];
+            $precoUnitario = (float)$item['preco_unitario'];
+            $quantidade = (int)$item['quantidade'];
+            $totalItem = $precoUnitario * $quantidade;
+
+            $stmt->bind_param(
+                "sissdid",
+                $idPagamento,
+                $idGuitarra,
+                $modelo,
+                $marca,
+                $precoUnitario,
+                $quantidade,
+                $totalItem
+            );
+
+            if (!$stmt->execute()) {
+                echo "[✖] Erro ao salvar item do carrinho: " . $stmt->error . "\n";
+            } else {
+                echo "[✔] Item salvo: $modelo x $quantidade\n";
+            }
+
+            $stmt->close();
+        }
+    }
+
+
+
 }
