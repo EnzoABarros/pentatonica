@@ -293,3 +293,9 @@ Pedido do comerciante recebido. Ignorado.
 
 ==== NOVA REQUISIÇÃO ====
 {"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:15:51.574-04:00","id":"31401066926","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T12:26:34.916-04:00","id":"31401354532","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}
+
+==== NOVA REQUISIÇÃO ====
+{"action":"update","application_id":"","data":{"currency_id":"","marketplace":"NONE","status":"closed"},"date_created":"2025-05-31T13:06:07.979-04:00","id":"31380860807","live_mode":true,"status":"closed","type":"topic_merchant_order_wh","user_id":2447049530,"version":2}

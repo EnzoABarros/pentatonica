@@ -5,16 +5,17 @@ require_once __DIR__ . '/../models/Carrinho.php';
 
 class CarrinhoController {
 
+    public function __construct() {
+        session_start();
+    }
 
     public function carrinho() {
-        session_start();
         $carrinhoModel = new Carrinho();
         $itensCarrinho = $carrinhoModel->listarCarrinho($_SESSION['usuario']['id']);
         require_once __DIR__ . '/../views/pages/carrinho.php';
     }
 
     public function adicionarCarrinho() {
-        session_start();
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $carrinhoModel = new Carrinho();
@@ -30,7 +31,6 @@ class CarrinhoController {
     }
 
     public function removerCarrinho() {
-        session_start();
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $carrinhoModel = new Carrinho();
@@ -42,5 +42,4 @@ class CarrinhoController {
             exit;
         }
     }
-    
 }

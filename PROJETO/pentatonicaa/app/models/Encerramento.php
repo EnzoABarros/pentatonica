@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../../../vendor/autoload.php';
 
 class Encerramento {
     private $db;
-    private $urlBase = "https://b442-2804-34c0-6ed7-1301-a865-e358-fe7f-976a.ngrok-free.app/pentatonicaa/PROJETO/pentatonicaa/public";
+    private $urlBase = "https://f137-2804-34c0-6e04-3e01-f5eb-8001-8b7e-921a.ngrok-free.app/pentatonicaa/PROJETO/pentatonicaa/public";
     private $accessToken = 'APP_USR-8947115096969728-051817-32ecb5c76da8feec8a0cf1f77b30e91c-2447049530';
 
     public function __construct() {

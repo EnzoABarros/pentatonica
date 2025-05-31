@@ -157,7 +157,7 @@ class Leilao {
             $mail->Body    = "
                 Olá!<br><br>
                 Um novo lance foi feito no leilão da guitarra que você demonstrou interesse.<br><br>
-                Acesse <a href='https://b442-2804-34c0-6ed7-1301-a865-e358-fe7f-976a.ngrok-free.app/pentatonicaa/PROJETO/pentatonicaa/public/leiloes'>aqui</a> para ver os detalhes e fazer sua oferta!<br><br>
+                Acesse <a href='https://f137-2804-34c0-6e04-3e01-f5eb-8001-8b7e-921a.ngrok-free.app/pentatonicaa/PROJETO/pentatonicaa/public/leiloes'>aqui</a> para ver os detalhes e fazer sua oferta!<br><br>
                 Continue de olho para não perder a chance de vencer!<br><br>
                 Obrigado!
             ";

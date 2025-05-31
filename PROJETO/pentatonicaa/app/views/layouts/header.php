@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+
 session_start();
 
 $url_atual = $_SERVER['REQUEST_URI'];

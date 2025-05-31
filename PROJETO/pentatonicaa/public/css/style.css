@@ -547,37 +547,22 @@ h1 {
 }
 
 .finalizar-carrinho {
-  position: relative;
-  margin-left: -850px;
-  margin-bottom: 50px;
-}
-
-.finalizar-carrinho p {
-  font-size: 25px;
-}
-
-.finalizar-carrinho a {
+  width: 300px;
   height: 60px;
-  background-color: transparent;
-  border: solid 2px rgb(0, 0, 0);
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(20, 20, 20);
   border-radius: 10px;
-  padding: 10px 25px;
-  font-size: 20px;
+  font-weight: 900;
+  font-size: 28px;
   font-family: "Roboto Mono", monospace;
-  transition: ease-out 0.3s;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
-
-.finalizar-carrinho a:hover {
-  color: rgb(255, 255, 255);
-  box-shadow: inset 0 -100px 0 0 rgb(20, 20, 20);
-  border: none;
+  transition: ease-out 0.1 s;
+  border: 2px solid rgb(20, 20, 20);
   cursor: pointer;
 }
 
-.finalizar-carrinho a:active {
-  transform: scale(0.9);
+.finalizar-carrinho:hover {
+  transform: scale(1.05);
 }
 
 .fundo {

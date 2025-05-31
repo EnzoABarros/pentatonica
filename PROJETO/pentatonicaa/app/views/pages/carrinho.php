@@ -10,7 +10,7 @@
 <body class="body-carrinho">
 <?php require_once __DIR__ . "/../layouts/header.php"; ?>
 
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 
 <h1 class="titulo-carrinho">Carrinho de Compras</h1>
 
@@ -62,7 +62,7 @@
         </table>
 
         <input type="hidden" name="total" value="<?= $totalCarrinho ?>">
-        <button type="submit" class="btn btn-primary">Finalizar compra</button>
+        <button type="submit" class="finalizar-carrinho">Finalizar compra</button>
     </form>
 <?php endif; ?>
 </body>
