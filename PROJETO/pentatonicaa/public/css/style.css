@@ -680,3 +680,69 @@ h1 {
 .divAtual h1{
   font-size: 40px;
 }
+
+.cadProd {
+  width: 850px;
+  border: 8px double rgb(20, 20, 20);
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  align-items: center;
+}
+
+.cadProd input {
+  width: 90%;
+  height: 35px;
+  border: 2px solid rgb(20, 20, 20);
+  border-radius: 10px;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.cadProd textarea {
+  min-width: 90%;
+  max-width: 90%;
+  min-height: 40px;
+  max-height: 300px;
+  border: 2px solid rgb(20, 20, 20);
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(20, 20, 20);
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  font-family: Arial, sans-serif;
+}
+
+.label:hover {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(20, 20, 20);
+  color: rgb(20, 20, 20);
+}
+
+#nome-arquivo {
+  margin-left: 10px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+#nome-arquivo {
+    margin-left: 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#previa-imagem {
+    display: none;
+    max-width: 300px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
