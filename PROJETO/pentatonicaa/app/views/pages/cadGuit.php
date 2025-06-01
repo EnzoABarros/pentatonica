@@ -7,15 +7,25 @@
     <link rel="stylesheet" type="text/css" href="/pentatonicaa/PROJETO/pentatonicaa/public/css/style.css?<?php echo time(); ?>">
     <link rel="icon" href="/pentatonicaa/PROJETO/pentatonicaa/public/images/logo.png" type="image/png">
 </head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img { 
+        width: 100vw;
+        margin-bottom: 20px;
+    }
+</style>
 <body>
 
     <?php require_once __DIR__ . "/../layouts/header.php" ?><br><br><br><br><br><br><br>
 
     <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/cadastrarguit.png" alt="Cadastrar Guitarra">
 
-    <h2>Cadastrar Guitarra</h2>
-
-    <form action="/pentatonicaa/PROJETO/pentatonicaa/public/cadastrar-guitarra" method="POST" enctype="multipart/form-data">
+    <form class="cadProd" action="/pentatonicaa/PROJETO/pentatonicaa/public/cadastrar-guitarra" method="POST" enctype="multipart/form-data">
         <label for="modelo">Modelo:</label>
         <input type="text" id="modelo" name="modelo" required><br><br>
 
@@ -33,11 +43,39 @@
         <label for="categoria">Categoria:</label>
         <input type="text" id="categoria" name="categoria" required><br><br>
 
-        <label for="imagem">Imagem:</label>
-        <input type="file" id="imagem" name="imagem" accept="image/*" required><br><br>
+        <label for="imagem" class="label">Escolher imagem</label>
+        <input type="file" id="imagem" name="imagem" accept="image/*" required hidden>
+        <span id="nome-arquivo">Nenhum arquivo selecionado</span>
 
-        <input type="submit" value="Cadastrar Guitarra">
+        <br>
+        <img id="previa-imagem" src="#" alt="Prévia da imagem">
+
+        <br>
+        <input class="finalizar-carrinho" type="submit" value="Cadastrar Guitarra">
     </form>
+
+<script>
+    document.getElementById('imagem').addEventListener('change', function() {
+        const arquivo = this.files[0];
+        const nomeSpan = document.getElementById('nome-arquivo');
+        const preview = document.getElementById('previa-imagem');
+
+        if (arquivo) {
+            nomeSpan.textContent = arquivo.name;
+
+            const leitor = new FileReader();
+            leitor.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            leitor.readAsDataURL(arquivo);
+        } else {
+            nomeSpan.textContent = "Nenhum arquivo selecionado";
+            preview.src = "#";
+            preview.style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
