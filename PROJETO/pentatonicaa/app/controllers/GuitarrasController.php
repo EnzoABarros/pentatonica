@@ -107,7 +107,7 @@ class GuitarrasController {
         $filtrosGet = $_GET;
         $leilaoModel = new Leilao();
 
-        $leiloes = $leilaoModel->listarLeiloes($filtrosGet);
+        $leiloes = $leilaoModel->listarLeiloesAtivos($filtrosGet);
 
         require_once __DIR__ . '/../views/pages/leiloes.php';
     }
