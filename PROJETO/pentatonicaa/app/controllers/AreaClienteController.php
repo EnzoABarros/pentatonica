@@ -55,9 +55,6 @@ class AreaClienteController
         $clienteModel = $this->loadModel('Cliente');
         $cliente = $clienteModel->findById($idCliente);
 
-        $compraModel = $this->loadModel('Compra');
-        $historico = $compraModel->getComprasPorCliente($idCliente);
-
         $leilaoModel = $this->loadModel('Leilao');
         $leiloesAtivos = $leilaoModel->getLeiloesAtivosPorCliente($idCliente);
 
