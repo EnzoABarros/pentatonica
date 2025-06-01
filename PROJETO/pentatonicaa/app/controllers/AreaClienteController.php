@@ -67,33 +67,30 @@ class AreaClienteController
         $clienteModel = new Cliente();
         $cliente = $clienteModel->buscarPorId($idCliente);
 
-        // $compraModel = new Compra();
-        // $historico = $compraModel->getComprasPorCliente($idCliente);
-
         $leilaoModel = new Leilao();
         $leiloesAtivos = $leilaoModel->participandoLeilao($idCliente);
 
+        $pagamentoModel = new Pagamento();
+        $historico = $pagamentoModel->getPagamentosPorCliente($idCliente);
+
         $this->render('areaCliente', [
             'cliente' => $cliente,
-            // 'historico' => $historico,
+            'historico' => $historico,
             'leiloesAtivos' => $leiloesAtivos
         ]);
     }
 
-    private function render($view, $dados = [])
-{
-    extract($dados);
+    private function render($view, $dados = []){
+        extract($dados);
 
-    $caminhoView = __DIR__ . "/../views/pages/{$view}.php";
+        $caminhoView = __DIR__ . "/../views/pages/{$view}.php";
 
-    if (file_exists($caminhoView)) {
-        require $caminhoView;
-    } else {
-        echo "Erro: View '{$view}.php' não encontrada em {$caminhoView}";
+        if (file_exists($caminhoView)) {
+            require $caminhoView;
+        } else {
+            echo "Erro: View '{$view}.php' não encontrada em {$caminhoView}";
+        }
+        
     }
-
-    $pagamentoModel = new Pagamento();
-    $historico = $pagamentoModel ->getPagamentosPorCliente($_SESSION['usuario']['id']);
-}
 
 }

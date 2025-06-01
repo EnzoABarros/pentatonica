@@ -38,7 +38,7 @@ $leiloesAtivos = $leiloesAtivos ?? [];
         <form action="/pentatonicaa/PROJETO/pentatonicaa/public/alterar-email" method="post">
             <div class="mb-3">
                 <label for="email" class="form-label" style="font-size: 20px;">Novo Email:</label> <br> <br>
-                <input type="email" class="form-control" id="email" name="email" required class="email-field" style="max-width: 190px; padding: 12px;border: none;border-radius: 4px;box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);color: dimgray;">
+                <input type="email" class="form-control" id="email" name="email" required class="email-field" style="background-color: #eee;border: none;padding: 1rem;font-size: 1rem;width: 13em;border-radius: 1rem;color: black;box-shadow: 0 0.4rem #dfd9d9;">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Atualizar Email</button>
@@ -48,7 +48,7 @@ $leiloesAtivos = $leiloesAtivos ?? [];
         <form action="/pentatonicaa/PROJETO/pentatonicaa/public/alterar-endereco" method="post">
             <div class="mb-3">
                 <label for="endereco" class="form-label" style="font-size: 20px;">Novo Endereço:</label> <br> <br>
-                <input type="endereco" class="form-control" id="endereco" name="endereco" required style="max-width: 190px; padding: 12px;border: none;border-radius: 4px;box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);color: dimgray;">
+                <input type="endereco" class="form-control" id="endereco" name="endereco" required style="background-color: #eee;border: none;padding: 1rem;font-size: 1rem;width: 13em;border-radius: 1rem;color: black;box-shadow: 0 0.4rem #dfd9d9;">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Atualizar Endereço</button>
@@ -56,14 +56,14 @@ $leiloesAtivos = $leiloesAtivos ?? [];
 
         <hr>
 
-        <h4 class="mt-4">Histórico de Compras</h4>
+        <h4 class="mt-4" style="font-size: 25px;">Histórico de Compras</h4>
         <?php if (!empty($historico)): ?>
             <ul class="list-group mb-4">
                 <?php foreach ($historico as $compra): ?>
                     <li class="list-group-item">
-                        Produto: <?= htmlspecialchars($compra->produto_nome) ?> -
-                        Data: <?= htmlspecialchars($compra->data_compra) ?> -
-                        Valor: <strong>R$ <?= htmlspecialchars(number_format($compra->valor, 2, ',', '.')) ?></strong>
+                        Produto: <?= htmlspecialchars($compra['titulo']) ?> -
+                        Data: <?= htmlspecialchars($compra['data_pagamento']) ?> -
+                        Valor: <strong>R$ <?= htmlspecialchars(number_format($compra['preco'], 2, ',', '.')) ?></strong>
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -73,13 +73,13 @@ $leiloesAtivos = $leiloesAtivos ?? [];
 
         <hr>
 
-        <h4>Leilões Ativos</h4>
+        <h4 style="font-size: 25px;">Leilões Ativos</h4>
         <?php if (!empty($leiloesAtivos)): ?>
             <ul class="list-group">
                 <?php foreach ($leiloesAtivos as $leilao): ?>
                     <li class="list-group-item">
                         Leilão: <?= htmlspecialchars($leilao['modelo']) ?> -
-                        Status: <?= htmlspecialchars($leilao['preco_atual']) ?> -
+                        Valor atual: R$ <?= htmlspecialchars($leilao['preco_atual']) ?> -
                         Fim: <?= htmlspecialchars($leilao['data_fim']) ?>
                     </li>
                 <?php endforeach; ?>
