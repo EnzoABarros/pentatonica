@@ -140,6 +140,8 @@ class GuitarrasController {
             session_start();
             $leilaoId = $_POST['leilao_id'];
             $novoPreco = (float)$_POST['valor_lance'];
+            $id_usuario = $_SESSION['usuario']['id'] ?? null;
+
 
             $leilaoModel = new Leilao();
             $leilao = $leilaoModel->buscarPorId($leilaoId);
@@ -153,7 +155,6 @@ class GuitarrasController {
             $precoBase = $precoAtual ?: $leilao['preco_inicio'];
 
             if ($novoPreco > $precoBase) {
-                $id_usuario = $_SESSION['usuario']['id'] ?? null;
                 if (!$id_usuario) {
                     echo "<script>alert('Usuário não autenticado.'); history.go(-1);</script>";
                     exit;

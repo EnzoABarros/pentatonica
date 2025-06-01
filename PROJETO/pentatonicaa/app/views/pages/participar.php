@@ -26,7 +26,7 @@
         <h1><?= htmlspecialchars($leilao['modelo']) ?></h1>
         <h2>Marca: <?= htmlspecialchars($leilao['marca']) ?></h2>
         <h2>Preço inicial: R$ <?= htmlspecialchars($leilao['preco_inicio']) ?></h2>
-        <h2>Maior lance: R$ <?= htmlspecialchars($leilao['preco_atual']) ?></h2>
+        <h2>Maior lance: R$ <?= htmlspecialchars($leilao['preco_atual'] ?? "0.00") ?></h2>
         <h2>Descrição: <?= htmlspecialchars($leilao['descricao']) ?></h2>
         <h2>Categoria: <?= htmlspecialchars($leilao['categoria']) ?></h2>
         <h2>Data de encerramento: <?= (new DateTime($leilao['data_fim']))->format('d/m/Y H:i') ?></h2>

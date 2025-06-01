@@ -29,7 +29,7 @@ $leiloesAtivos = $leiloesAtivos ?? [];
         <div class="mb-3">
             <p style="font-size: 17px;"><strong style="font-size: 20px;">Nome:</strong> <?= htmlspecialchars($_SESSION['usuario']['nome']) ?></p> <br>
             <p style="font-size: 17px;"><strong style="font-size: 20px;">Email:</strong> <?= htmlspecialchars($_SESSION['usuario']['email']) ?></p> <br>
-            <p style="font-size: 17px;"><strong style="font-size: 20px;">Endereço:</strong> <?= htmlspecialchars($cliente->$_SESSION['usuario']['endereco'] ?? 'Não informado') ?></pp <br>
+            <p style="font-size: 17px;"><strong style="font-size: 20px;">Endereço:</strong> <?= htmlspecialchars($_SESSION['usuario']['endereco'] ?? "Não informado") ?></pp <br>
         </div>
         <br>
         <hr>

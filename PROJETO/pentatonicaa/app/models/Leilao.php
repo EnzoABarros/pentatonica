@@ -185,4 +185,14 @@ class Leilao {
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function participandoLeilao($id_cliente) {
+        $sql = "SELECT modelo, marca, preco_atual, descricao, categoria, data_fim, url_imagem WHERE cliente_id = ?";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id_cliente);
+        $stmt->execute();
+
+        $resultado = $stmt->get_result();
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
 }
