@@ -6,7 +6,19 @@ class AreaClienteController
 {
     public function areaCliente()
     {
-        require_once __DIR__ . '/../views/pages/areaCliente.php';
+        session_start();
+    $idCliente = $_SESSION['usuario']['id'];
+
+    $clienteModel = new Cliente();
+    $cliente = $clienteModel->buscarPorId($idCliente);
+
+    $leilaoModel = new Leilao();
+    $leiloesAtivos = $leilaoModel->participandoLeilao($idCliente);
+
+    $this->render('areaCliente', [
+        'cliente' => $cliente,
+        'leiloesAtivos' => $leiloesAtivos
+    ]);
     }
 
     public function atualizarEmail()

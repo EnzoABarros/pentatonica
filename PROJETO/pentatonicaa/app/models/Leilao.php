@@ -243,7 +243,12 @@ class Leilao {
     }
 
     public function participandoLeilao($id_cliente) {
-        $sql = "SELECT modelo, marca, preco_atual, descricao, categoria, data_fim, url_imagem WHERE cliente_id = ?";
+        $sql = "SELECT l.modelo, l.marca, l.preco_atual, l.descricao, l.categoria, l.data_fim, l.url_imagem 
+        FROM tb_leilao l
+        JOIN tb_lances lc ON lc.id_guitarra = l.id
+        WHERE lc.id_usuario = ?
+        GROUP BY l.id";
+
 
         $stmt = $this->db->prepare($sql);
         $stmt->bind_param("i", $id_cliente);

@@ -23,7 +23,7 @@ $leiloesAtivos = $leiloesAtivos ?? [];
 
 <div class="container mt-5 p-4 bg-white shadow rounded" style="margin-top: 4.2rem; margin-left: 1rem;">
 
-    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/areadocliente.png" alt="Área do Cliente">
+    <img src="/pentatonicaa/PROJETO/pentatonicaa/public/images/areadocliente.png" alt="Área do Cliente" width="100%">
 
     <?php if ($cliente): ?>
         <div class="mb-3">
@@ -38,17 +38,17 @@ $leiloesAtivos = $leiloesAtivos ?? [];
         <form action="/pentatonicaa/PROJETO/pentatonicaa/public/alterar-email" method="post">
             <div class="mb-3">
                 <label for="email" class="form-label" style="font-size: 20px;">Novo Email:</label> <br> <br>
-                <input type="email" class="form-control" id="email" name="email" required class="email-field">
+                <input type="email" class="form-control" id="email" name="email" required class="email-field" style="max-width: 190px; padding: 12px;border: none;border-radius: 4px;box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);color: dimgray;">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Atualizar Email</button>
         </form>
 
-        <h4 class="mt-4">Alterar Endereço</h4>
+        <h4 class="mt-4" style="font-size: 25px;">Alterar Endereço</h4>
         <form action="/pentatonicaa/PROJETO/pentatonicaa/public/alterar-endereco" method="post">
             <div class="mb-3">
-                <label for="endereco" class="form-label">Novo Endereço:</label>
-                <input type="endereco" class="form-control" id="endereco" name="endereco" required value="<?= htmlspecialchars($_SESSION['usuario']['endereco']) ?>">
+                <label for="endereco" class="form-label" style="font-size: 20px;">Novo Endereço:</label> <br> <br>
+                <input type="endereco" class="form-control" id="endereco" name="endereco" required style="max-width: 190px; padding: 12px;border: none;border-radius: 4px;box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);color: dimgray;">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Atualizar Endereço</button>
@@ -78,9 +78,9 @@ $leiloesAtivos = $leiloesAtivos ?? [];
             <ul class="list-group">
                 <?php foreach ($leiloesAtivos as $leilao): ?>
                     <li class="list-group-item">
-                        Leilão: <?= htmlspecialchars($leilao->titulo) ?> -
-                        Status: <?= htmlspecialchars($leilao->status) ?> -
-                        Fim: <?= htmlspecialchars($leilao->data_fim) ?>
+                        Leilão: <?= htmlspecialchars($leilao['modelo']) ?> -
+                        Status: <?= htmlspecialchars($leilao['preco_atual']) ?> -
+                        Fim: <?= htmlspecialchars($leilao['data_fim']) ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
