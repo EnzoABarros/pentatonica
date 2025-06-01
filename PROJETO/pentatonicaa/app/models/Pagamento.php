@@ -73,7 +73,23 @@ class Pagamento {
             $stmt->close();
         }
     }
+    public function getPagamentosPorCliente($idCliente) {
+        $sql = "SELECT titulo, preco, status, data_pagamento, tipo_pagamento 
+                FROM tb_pagamentos 
+                WHERE id_usuario = ? 
+                ORDER BY data_pagamento DESC";
 
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $idCliente);
+        $stmt->execute();
 
+        $result = $stmt->get_result();
 
+        $pagamentos = [];
+        while ($row = $result->fetch_assoc()) {
+            $pagamentos[] = $row;
+        }
+
+        return $pagamentos;
+    }
 }

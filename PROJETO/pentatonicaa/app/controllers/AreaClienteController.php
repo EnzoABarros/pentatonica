@@ -79,6 +79,9 @@ class AreaClienteController
     } else {
         echo "Erro: View '{$view}.php' não encontrada em {$caminhoView}";
     }
+    
+    $pagamentoModel = new Pagamento();
+    $historico = $pagamentoModel->getHistoricoCompras($_SESSION['usuario']['id']);
 }
 
 }
