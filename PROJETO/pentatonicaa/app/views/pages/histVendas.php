@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../models/Guitarra.php';
+require_once __DIR__ . '/../../models/Pagamento.php';
 
 ?>
 
@@ -31,14 +31,16 @@ require_once __DIR__ . '/../../models/Guitarra.php';
                 </tr>
             </thead>
             <tbody>
-                    <tr>
-                        <td><?= $vendas['id_pagamento']?></td>
-                        <td><?= $vendas['titulo'] ?></td>
-                        <td>R$ <?= $vendas['valor'] ?></td>
-                        <td><?= $vendas['email'] ?></td>
-                        <td><?= $vendas['status'] ?></td>
-                        <td><?= $vendas['data_pagamento'] ?></td>
-                    </tr>
+                    <?php foreach ($vendas as $venda): ?>
+                <tr>
+                    <td><?= htmlspecialchars($venda['id_pagamento']) ?></td>
+                    <td><?= htmlspecialchars($venda['titulo']) ?></td>
+                    <td>R$ <?= htmlspecialchars($venda['preco']) ?></td>
+                    <td><?= htmlspecialchars($venda['email']) ?></td>
+                    <td><?= htmlspecialchars($venda['status']) ?></td>
+                    <td><?= htmlspecialchars($venda['data_pagamento']) ?></td>
+                </tr>
+            <?php endforeach; ?>
             </tbody>
         </table>
 
