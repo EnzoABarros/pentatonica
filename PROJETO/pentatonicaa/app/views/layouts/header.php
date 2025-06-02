@@ -52,11 +52,12 @@ $eh_areacliente = strpos($url_atual, '/pentatonicaa/PROJETO/pentatonicaa/public/
                 <a id="btn-carrinho" href="/pentatonicaa/PROJETO/pentatonicaa/public/carrinho"><button>Carrinho</button></a>
             <?php endif; ?>
 
-            <?php if (!$eh_areacliente): ?>
+            <?php if (!$eh_areacliente && $_SESSION['usuario']['tipo'] === 'cliente'): ?>
                 <a id="btn-carrinho" href="/pentatonicaa/PROJETO/pentatonicaa/public/area-cliente"><button>Área do Cliente</button></a>
             <?php endif; ?>
 
             <?php if ($_SESSION['usuario']['tipo'] === 'adm'): ?>
+                <a id="btn-carrinho" href="/pentatonicaa/PROJETO/pentatonicaa/public/historico-vendas"><button>Histórico de Vendas</button></a>
                 <a id="btn-cadastrar-guitarra" href="/pentatonicaa/PROJETO/pentatonicaa/public/cadastro-guitarra"><button>Cadastrar Guitarra</button></a>
                 <a id="btn-cadastrar-leilao" href="/pentatonicaa/PROJETO/pentatonicaa/public/cadastro-leilao"><button>Cadastrar Leilão</button></a>
             <?php endif; ?>

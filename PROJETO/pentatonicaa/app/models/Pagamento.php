@@ -92,4 +92,19 @@ class Pagamento {
 
         return $pagamentos;
     }
+    public function getVendas() {
+        $sql = "SELECT * FROM tb_pagamentos";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $vendas = [];
+        while($row = $result->fetch_assoc()) {
+            $vendas[] = $row;
+        }
+        
+    return $vendas;
+    }
 }

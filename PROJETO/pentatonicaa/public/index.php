@@ -9,6 +9,7 @@ require_once __DIR__ . '/../app/controllers/CarrinhoController.php';
 require_once __DIR__ . '/../app/controllers/GuiasController.php';
 require_once __DIR__ . '/../app/controllers/CompraController.php';
 require_once __DIR__ . '/../app/controllers/AreaClienteController.php';
+require_once __DIR__ . '/../app/controllers/VendasController.php';
 
 
 
@@ -48,6 +49,7 @@ $router->addRoute('/area-cliente', 'AreaClienteController@areaCliente');
 $router->addRoute('/alterar-endereco', 'AreaClienteController@atualizarEndereco');
 $router->addRoute('/alterar-email', 'AreaClienteController@atualizarEmail');
 $router->addRoute('/historico', 'HistoricoController@index');
+$router->addRoute('/historico-vendas', 'VendasController@vendas');
 
 
 
